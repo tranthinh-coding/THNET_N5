@@ -54,6 +54,13 @@ namespace N5
             return new DB();
         }
 
+        public SqlDataAdapter RawQuery(string sql)
+        {
+            SqlCommand cmd = new SqlCommand(sql, Conn);
+
+            return new SqlDataAdapter(cmd);
+        }
+
         public SqlDataAdapter Select(String[] columns)
         {
             var sql = new StringBuilder($"SELECT {string.Join(",", columns)} FROM {TABLE}");

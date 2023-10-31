@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,12 +26,7 @@ namespace N5
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string[] col = { "MaNV" };
-            SqlDataAdapter da  = DB.Table("NhanVien").Select(col);
 
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            data.DataSource = dt;
         }
     }
 }
