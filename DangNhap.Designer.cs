@@ -28,12 +28,221 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
+            this.bunifuGradientPanel1 = new Bunifu.UI.WinForms.BunifuGradientPanel();
+            this.loginBtn = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.closeBtn = new System.Windows.Forms.PictureBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.alphaBlendTextBox2 = new ZBobb.AlphaBlendTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.alphaBlendTextBox1 = new ZBobb.AlphaBlendTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.bunifuGradientPanel1.SuspendLayout();
+            this.loginBtn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // bunifuGradientPanel1
+            // 
+            this.bunifuGradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
+            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.BorderRadius = 1;
+            this.bunifuGradientPanel1.Controls.Add(this.label3);
+            this.bunifuGradientPanel1.Controls.Add(this.loginBtn);
+            this.bunifuGradientPanel1.Controls.Add(this.closeBtn);
+            this.bunifuGradientPanel1.Controls.Add(this.checkBox1);
+            this.bunifuGradientPanel1.Controls.Add(this.pictureBox2);
+            this.bunifuGradientPanel1.Controls.Add(this.panel2);
+            this.bunifuGradientPanel1.Controls.Add(this.alphaBlendTextBox2);
+            this.bunifuGradientPanel1.Controls.Add(this.pictureBox1);
+            this.bunifuGradientPanel1.Controls.Add(this.panel1);
+            this.bunifuGradientPanel1.Controls.Add(this.alphaBlendTextBox1);
+            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(92)))), ((int)(((byte)(188)))));
+            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.DeepPink;
+            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.DodgerBlue;
+            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(60)))), ((int)(((byte)(212)))));
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
+            this.bunifuGradientPanel1.Quality = 10;
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(800, 450);
+            this.bunifuGradientPanel1.TabIndex = 0;
+            // 
+            // loginBtn
+            // 
+            this.loginBtn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.loginBtn.Controls.Add(this.label1);
+            this.loginBtn.Controls.Add(this.pictureBox3);
+            this.loginBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.loginBtn.Location = new System.Drawing.Point(570, 276);
+            this.loginBtn.Name = "loginBtn";
+            this.loginBtn.Size = new System.Drawing.Size(137, 52);
+            this.loginBtn.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 27);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Login";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Resources.login1;
+            this.pictureBox3.Location = new System.Drawing.Point(81, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(45, 48);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.Image = global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Resources.close;
+            this.closeBtn.Location = new System.Drawing.Point(723, 27);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(45, 48);
+            this.closeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.closeBtn.TabIndex = 10;
+            this.closeBtn.TabStop = false;
+            this.closeBtn.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.White;
+            this.checkBox1.Location = new System.Drawing.Point(314, 286);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(179, 27);
+            this.checkBox1.TabIndex = 6;
+            this.checkBox1.Text = "Remember me";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Resources.password11;
+            this.pictureBox2.Location = new System.Drawing.Point(314, 186);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 48);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(314, 236);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(393, 3);
+            this.panel2.TabIndex = 4;
+            // 
+            // alphaBlendTextBox2
+            // 
+            this.alphaBlendTextBox2.BackAlpha = 0;
+            this.alphaBlendTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.alphaBlendTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.alphaBlendTextBox2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.alphaBlendTextBox2.ForeColor = System.Drawing.Color.White;
+            this.alphaBlendTextBox2.Location = new System.Drawing.Point(365, 186);
+            this.alphaBlendTextBox2.Multiline = true;
+            this.alphaBlendTextBox2.Name = "alphaBlendTextBox2";
+            this.alphaBlendTextBox2.Size = new System.Drawing.Size(333, 44);
+            this.alphaBlendTextBox2.TabIndex = 3;
+            this.alphaBlendTextBox2.Text = "Password";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Resources.user1;
+            this.pictureBox1.Location = new System.Drawing.Point(314, 82);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(314, 132);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(393, 3);
+            this.panel1.TabIndex = 1;
+            // 
+            // alphaBlendTextBox1
+            // 
+            this.alphaBlendTextBox1.BackAlpha = 0;
+            this.alphaBlendTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.alphaBlendTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.alphaBlendTextBox1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.alphaBlendTextBox1.ForeColor = System.Drawing.Color.White;
+            this.alphaBlendTextBox1.Location = new System.Drawing.Point(365, 82);
+            this.alphaBlendTextBox1.Multiline = true;
+            this.alphaBlendTextBox1.Name = "alphaBlendTextBox1";
+            this.alphaBlendTextBox1.Size = new System.Drawing.Size(333, 44);
+            this.alphaBlendTextBox1.TabIndex = 0;
+            this.alphaBlendTextBox1.Text = "Username";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("VNI 08 Springtime2", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(24, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(265, 175);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Group 5";
+            // 
+            // DangNhap
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bunifuGradientPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "DangNhap";
             this.Text = "DangNhap";
+            this.bunifuGradientPanel1.ResumeLayout(false);
+            this.bunifuGradientPanel1.PerformLayout();
+            this.loginBtn.ResumeLayout(false);
+            this.loginBtn.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel1;
+        private ZBobb.AlphaBlendTextBox alphaBlendTextBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel2;
+        private ZBobb.AlphaBlendTextBox alphaBlendTextBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox closeBtn;
+        private System.Windows.Forms.Panel loginBtn;
+        private System.Windows.Forms.Label label3;
     }
 }
