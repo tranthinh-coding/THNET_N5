@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.bunifuGradientPanel1 = new Bunifu.UI.WinForms.BunifuGradientPanel();
+            this.label3 = new System.Windows.Forms.Label();
             this.loginBtn = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -37,11 +38,10 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.alphaBlendTextBox2 = new ZBobb.AlphaBlendTextBox();
+            this.passwordTb = new ZBobb.AlphaBlendTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.alphaBlendTextBox1 = new ZBobb.AlphaBlendTextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.usernameTb = new ZBobb.AlphaBlendTextBox();
             this.bunifuGradientPanel1.SuspendLayout();
             this.loginBtn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -62,10 +62,10 @@
             this.bunifuGradientPanel1.Controls.Add(this.checkBox1);
             this.bunifuGradientPanel1.Controls.Add(this.pictureBox2);
             this.bunifuGradientPanel1.Controls.Add(this.panel2);
-            this.bunifuGradientPanel1.Controls.Add(this.alphaBlendTextBox2);
+            this.bunifuGradientPanel1.Controls.Add(this.passwordTb);
             this.bunifuGradientPanel1.Controls.Add(this.pictureBox1);
             this.bunifuGradientPanel1.Controls.Add(this.panel1);
-            this.bunifuGradientPanel1.Controls.Add(this.alphaBlendTextBox1);
+            this.bunifuGradientPanel1.Controls.Add(this.usernameTb);
             this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(92)))), ((int)(((byte)(188)))));
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.DeepPink;
@@ -77,6 +77,17 @@
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(800, 450);
             this.bunifuGradientPanel1.TabIndex = 0;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("VNI 08 Springtime2", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(24, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(265, 175);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Group 5";
+            // 
             // loginBtn
             // 
             this.loginBtn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -87,6 +98,7 @@
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(137, 52);
             this.loginBtn.TabIndex = 11;
+            this.loginBtn.Paint += new System.Windows.Forms.PaintEventHandler(this.loginBtn_Paint);
             // 
             // label1
             // 
@@ -101,7 +113,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Resources.login1;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(81, 0);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(45, 48);
@@ -112,7 +124,7 @@
             // 
             // closeBtn
             // 
-            this.closeBtn.Image = global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Resources.close;
+            this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
             this.closeBtn.Location = new System.Drawing.Point(723, 27);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(45, 48);
@@ -135,7 +147,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Resources.password11;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(314, 186);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(45, 48);
@@ -151,23 +163,23 @@
             this.panel2.Size = new System.Drawing.Size(393, 3);
             this.panel2.TabIndex = 4;
             // 
-            // alphaBlendTextBox2
+            // passwordTb
             // 
-            this.alphaBlendTextBox2.BackAlpha = 0;
-            this.alphaBlendTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.alphaBlendTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.alphaBlendTextBox2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.alphaBlendTextBox2.ForeColor = System.Drawing.Color.White;
-            this.alphaBlendTextBox2.Location = new System.Drawing.Point(365, 186);
-            this.alphaBlendTextBox2.Multiline = true;
-            this.alphaBlendTextBox2.Name = "alphaBlendTextBox2";
-            this.alphaBlendTextBox2.Size = new System.Drawing.Size(333, 44);
-            this.alphaBlendTextBox2.TabIndex = 3;
-            this.alphaBlendTextBox2.Text = "Password";
+            this.passwordTb.BackAlpha = 0;
+            this.passwordTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.passwordTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.passwordTb.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTb.ForeColor = System.Drawing.Color.White;
+            this.passwordTb.Location = new System.Drawing.Point(365, 186);
+            this.passwordTb.Multiline = true;
+            this.passwordTb.Name = "passwordTb";
+            this.passwordTb.Size = new System.Drawing.Size(333, 44);
+            this.passwordTb.TabIndex = 3;
+            this.passwordTb.Text = "Password";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Resources.user1;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(314, 82);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(45, 48);
@@ -183,30 +195,19 @@
             this.panel1.Size = new System.Drawing.Size(393, 3);
             this.panel1.TabIndex = 1;
             // 
-            // alphaBlendTextBox1
+            // usernameTb
             // 
-            this.alphaBlendTextBox1.BackAlpha = 0;
-            this.alphaBlendTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.alphaBlendTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.alphaBlendTextBox1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.alphaBlendTextBox1.ForeColor = System.Drawing.Color.White;
-            this.alphaBlendTextBox1.Location = new System.Drawing.Point(365, 82);
-            this.alphaBlendTextBox1.Multiline = true;
-            this.alphaBlendTextBox1.Name = "alphaBlendTextBox1";
-            this.alphaBlendTextBox1.Size = new System.Drawing.Size(333, 44);
-            this.alphaBlendTextBox1.TabIndex = 0;
-            this.alphaBlendTextBox1.Text = "Username";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("VNI 08 Springtime2", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(24, 82);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(265, 175);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Group 5";
+            this.usernameTb.BackAlpha = 0;
+            this.usernameTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.usernameTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.usernameTb.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameTb.ForeColor = System.Drawing.Color.White;
+            this.usernameTb.Location = new System.Drawing.Point(365, 82);
+            this.usernameTb.Multiline = true;
+            this.usernameTb.Name = "usernameTb";
+            this.usernameTb.Size = new System.Drawing.Size(333, 44);
+            this.usernameTb.TabIndex = 0;
+            this.usernameTb.Text = "Username";
             // 
             // DangNhap
             // 
@@ -232,11 +233,11 @@
         #endregion
 
         private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel1;
-        private ZBobb.AlphaBlendTextBox alphaBlendTextBox1;
+        private ZBobb.AlphaBlendTextBox usernameTb;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel2;
-        private ZBobb.AlphaBlendTextBox alphaBlendTextBox2;
+        private ZBobb.AlphaBlendTextBox passwordTb;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
