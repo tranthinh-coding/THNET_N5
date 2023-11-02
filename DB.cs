@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace N5
 {
@@ -16,7 +17,7 @@ namespace N5
         public static string ConnectionString = "Data Source=THINK\\SQLEXPRESS;Initial Catalog=QLBanHangTapHoa;Integrated Security=True";
         public static string TABLE;
 
-        public string[] WHERE = { };
+        public List<string> WHERE = new List<string>();
 
         DB()
         {
@@ -65,9 +66,10 @@ namespace N5
         {
             var sql = new StringBuilder($"SELECT {string.Join(",", columns)} FROM {TABLE}");
 
-            if (WHERE.Length > 0)
+            if (WHERE.Count > 0)
             {
-                sql.Append($" WHERE {string.Join(" AND ", WHERE)}");
+                string whereClause = string.Join(" AND ", WHERE.Cast<string>());
+                sql.Append($" WHERE {whereClause}");
             }
 
             SqlCommand cmd = new SqlCommand(sql.ToString(), Conn);
@@ -77,9 +79,16 @@ namespace N5
 
         public DB Where(string column, object value, string opera = "=")
         {
-            WHERE.Append(
-                $"{column} {opera} {value}"    
+            string semi = "";
+            if (value.GetType() == typeof(string))
+            {
+                semi = "'";
+            }
+
+            WHERE.Add(
+                 $" {column} {opera} {semi + value + semi} "
             );
+  
             return this;
         }
 
@@ -87,7 +96,7 @@ namespace N5
         {
             var sql = new StringBuilder($"DELETE FROM {TABLE}");
 
-            if (WHERE.Length > 0)
+            if (WHERE.Count > 0)
             {
                 sql.Append($" WHERE {string.Join(" AND ", WHERE)}");
             }
@@ -110,7 +119,7 @@ namespace N5
 
             sql.Length -= 1; // xoa ki tu dau phay ^^^^ o cuoi
 
-            if (WHERE.Length > 0)
+            if (WHERE.Count > 0)
             {
                 sql.Append(
                     " WHERE " + string.Join(" AND ", WHERE)    

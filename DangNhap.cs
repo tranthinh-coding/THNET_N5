@@ -18,43 +18,90 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         public DangNhap()
         {
             InitializeComponent();
-            closeBtn.Cursor = Cursors.Hand;
-            loginBtn.Cursor = Cursors.Hand;
-            
+        }
+
+        private void DangNhap_Load(object sender, EventArgs e)
+        {
 
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+
+        private void bunifuButton2_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
 
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        // btn dang nhap
+        private void bunifuButton1_Click_1(object sender, EventArgs e)
         {
-            
-        }
+            string taiKhoan = txtTaiKhoan.Text;
+            string matKhau = txtMatKhau.Text;
 
-        private void loginBtn_Paint(object sender, PaintEventArgs e)
-        {
-            string[] col = { "MaNV" };
-            string username = usernameTb.Text;
-            string password = passwordTb.Text;
-            SqlDataAdapter da = DB.Table("NhanVien").Where("MaNV", username, "=").Where("MatKhau",password, "=").Select(col);
-            if (da != null)
+            bool isHasErr = false;
+            // set error
+            if (taiKhoan == "")
             {
-                MessageBox.Show("Dang nhap thanh cong");
+                taiKhoanErr.Text = "Vui lòng nhập tài khoản.";
+                isHasErr = true;
             }
+            if (matKhau == "")
+            {
+                matKhauErr.Text = "Vui lòng nhập mật khẩu.";
+                isHasErr = true;
+            }
+
+            if (isHasErr) return;
+
+            try
+            {
+                QLHHDBDataContext db = new QLHHDBDataContext();
+
+                var result = db.NhanViens
+                    .Where(p => p.MaNV == taiKhoan && p.MatKhau == matKhau)
+                    .Select(p => new
+                    {
+                        p.MaNV,
+                        p.TenNV,
+                        p.Quyen,
+                        p.DiaChi
+                    })
+                    .Single();
+
+                if (result == null) throw new Exception();
+            
+                Store.User = new NhanVien
+                {
+                    MaNV = result.MaNV,
+                    TenNV = result.TenNV,
+                    Quyen = result.Quyen,
+                    DiaChi = result.DiaChi
+                };
+
+                (new Dashboard()).Show();
+                this.Hide();
+
+            } catch
+            {
+                formError.Text = "Tài khoản hoặc mật khẩu không chính xác.";
+            }
+
         }
 
-        private void bunifuGradientPanel1_Click(object sender, EventArgs e)
+        private void txtTaiKhoan_TextChange(object sender, EventArgs e)
         {
-
+            taiKhoanErr.Text = "";
+            formError.Text = "";
         }
 
-        private void bunifuTextBox1_TextChanged(object sender, EventArgs e)
+        private void txtMatKhau_TextChange(object sender, EventArgs e)
         {
-
+            matKhauErr.Text = "";
+            formError.Text = "";
         }
     }
 }
