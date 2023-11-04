@@ -63,6 +63,16 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap box {
+            get {
+                object obj = ResourceManager.GetObject("box", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon {
             get {
                 object obj = ResourceManager.GetObject("icon", resourceCulture);
@@ -76,6 +86,16 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties {
         internal static System.Drawing.Bitmap login_object {
             get {
                 object obj = ResourceManager.GetObject("login-object", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usr {
+            get {
+                object obj = ResourceManager.GetObject("usr", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

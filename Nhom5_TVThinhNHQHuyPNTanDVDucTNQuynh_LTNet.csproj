@@ -308,5 +308,11 @@
   <ItemGroup>
     <None Include="Public\icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Public\usr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Public\box.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

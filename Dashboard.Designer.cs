@@ -35,6 +35,7 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.usrName = new Bunifu.UI.WinForms.BunifuLabel();
+            this.mainPanel = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.hoaDonBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.loaiHangBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -60,6 +61,21 @@
             this.usrName.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.usrName.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
+            // mainPanel
+            // 
+            this.mainPanel.BackgroundColor = System.Drawing.Color.Transparent;
+            this.mainPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mainPanel.BackgroundImage")));
+            this.mainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mainPanel.BorderColor = System.Drawing.Color.Transparent;
+            this.mainPanel.BorderRadius = 3;
+            this.mainPanel.BorderThickness = 1;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(252, 0);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.ShowBorders = true;
+            this.mainPanel.Size = new System.Drawing.Size(900, 657);
+            this.mainPanel.TabIndex = 3;
+            // 
             // bunifuPanel1
             // 
             this.bunifuPanel1.BackgroundColor = System.Drawing.Color.Transparent;
@@ -76,8 +92,8 @@
             this.bunifuPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuPanel1.Name = "bunifuPanel1";
-            this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(194, 657);
+            this.bunifuPanel1.ShowBorders = false;
+            this.bunifuPanel1.Size = new System.Drawing.Size(252, 657);
             this.bunifuPanel1.TabIndex = 1;
             // 
             // hoaDonBtn
@@ -91,7 +107,7 @@
             this.hoaDonBtn.AutoSizeLeftIcon = true;
             this.hoaDonBtn.AutoSizeRightIcon = true;
             this.hoaDonBtn.BackColor = System.Drawing.Color.Transparent;
-            this.hoaDonBtn.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.hoaDonBtn.BackColor1 = System.Drawing.Color.Transparent;
             this.hoaDonBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("hoaDonBtn.BackgroundImage")));
             this.hoaDonBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.hoaDonBtn.ButtonText = "Quản lý hoá đơn";
@@ -123,11 +139,11 @@
             this.hoaDonBtn.IdleBorderColor = System.Drawing.Color.Transparent;
             this.hoaDonBtn.IdleBorderRadius = 16;
             this.hoaDonBtn.IdleBorderThickness = 1;
-            this.hoaDonBtn.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.hoaDonBtn.IdleFillColor = System.Drawing.Color.Transparent;
             this.hoaDonBtn.IdleIconLeftImage = null;
             this.hoaDonBtn.IdleIconRightImage = null;
             this.hoaDonBtn.IndicateFocus = false;
-            this.hoaDonBtn.Location = new System.Drawing.Point(12, 220);
+            this.hoaDonBtn.Location = new System.Drawing.Point(12, 217);
             this.hoaDonBtn.Name = "hoaDonBtn";
             this.hoaDonBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.hoaDonBtn.OnDisabledState.BorderRadius = 16;
@@ -149,7 +165,7 @@
             this.hoaDonBtn.OnIdleState.BorderRadius = 16;
             this.hoaDonBtn.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.hoaDonBtn.OnIdleState.BorderThickness = 0;
-            this.hoaDonBtn.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.hoaDonBtn.OnIdleState.FillColor = System.Drawing.Color.Transparent;
             this.hoaDonBtn.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.hoaDonBtn.OnIdleState.IconLeftImage = null;
             this.hoaDonBtn.OnIdleState.IconRightImage = null;
@@ -161,7 +177,7 @@
             this.hoaDonBtn.OnPressedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.hoaDonBtn.OnPressedState.IconLeftImage = null;
             this.hoaDonBtn.OnPressedState.IconRightImage = null;
-            this.hoaDonBtn.Size = new System.Drawing.Size(170, 44);
+            this.hoaDonBtn.Size = new System.Drawing.Size(224, 34);
             this.hoaDonBtn.TabIndex = 3;
             this.hoaDonBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.hoaDonBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -181,7 +197,7 @@
             this.loaiHangBtn.AutoSizeLeftIcon = true;
             this.loaiHangBtn.AutoSizeRightIcon = true;
             this.loaiHangBtn.BackColor = System.Drawing.Color.Transparent;
-            this.loaiHangBtn.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.loaiHangBtn.BackColor1 = System.Drawing.Color.Transparent;
             this.loaiHangBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("loaiHangBtn.BackgroundImage")));
             this.loaiHangBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.loaiHangBtn.ButtonText = "Quản lý loại hàng";
@@ -213,11 +229,11 @@
             this.loaiHangBtn.IdleBorderColor = System.Drawing.Color.Transparent;
             this.loaiHangBtn.IdleBorderRadius = 16;
             this.loaiHangBtn.IdleBorderThickness = 1;
-            this.loaiHangBtn.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.loaiHangBtn.IdleFillColor = System.Drawing.Color.Transparent;
             this.loaiHangBtn.IdleIconLeftImage = null;
             this.loaiHangBtn.IdleIconRightImage = null;
             this.loaiHangBtn.IndicateFocus = false;
-            this.loaiHangBtn.Location = new System.Drawing.Point(12, 179);
+            this.loaiHangBtn.Location = new System.Drawing.Point(12, 167);
             this.loaiHangBtn.Name = "loaiHangBtn";
             this.loaiHangBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.loaiHangBtn.OnDisabledState.BorderRadius = 16;
@@ -239,7 +255,7 @@
             this.loaiHangBtn.OnIdleState.BorderRadius = 16;
             this.loaiHangBtn.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.loaiHangBtn.OnIdleState.BorderThickness = 0;
-            this.loaiHangBtn.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.loaiHangBtn.OnIdleState.FillColor = System.Drawing.Color.Transparent;
             this.loaiHangBtn.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.loaiHangBtn.OnIdleState.IconLeftImage = null;
             this.loaiHangBtn.OnIdleState.IconRightImage = null;
@@ -251,7 +267,7 @@
             this.loaiHangBtn.OnPressedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.loaiHangBtn.OnPressedState.IconLeftImage = null;
             this.loaiHangBtn.OnPressedState.IconRightImage = null;
-            this.loaiHangBtn.Size = new System.Drawing.Size(170, 44);
+            this.loaiHangBtn.Size = new System.Drawing.Size(224, 34);
             this.loaiHangBtn.TabIndex = 3;
             this.loaiHangBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.loaiHangBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -271,7 +287,7 @@
             this.hangHoaBtn.AutoSizeLeftIcon = true;
             this.hangHoaBtn.AutoSizeRightIcon = true;
             this.hangHoaBtn.BackColor = System.Drawing.Color.Transparent;
-            this.hangHoaBtn.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.hangHoaBtn.BackColor1 = System.Drawing.Color.Transparent;
             this.hangHoaBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("hangHoaBtn.BackgroundImage")));
             this.hangHoaBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.hangHoaBtn.ButtonText = "Quản lý hàng hoá";
@@ -303,11 +319,11 @@
             this.hangHoaBtn.IdleBorderColor = System.Drawing.Color.Transparent;
             this.hangHoaBtn.IdleBorderRadius = 16;
             this.hangHoaBtn.IdleBorderThickness = 1;
-            this.hangHoaBtn.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.hangHoaBtn.IdleFillColor = System.Drawing.Color.Transparent;
             this.hangHoaBtn.IdleIconLeftImage = null;
             this.hangHoaBtn.IdleIconRightImage = null;
             this.hangHoaBtn.IndicateFocus = false;
-            this.hangHoaBtn.Location = new System.Drawing.Point(12, 138);
+            this.hangHoaBtn.Location = new System.Drawing.Point(12, 117);
             this.hangHoaBtn.Name = "hangHoaBtn";
             this.hangHoaBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.hangHoaBtn.OnDisabledState.BorderRadius = 16;
@@ -329,7 +345,7 @@
             this.hangHoaBtn.OnIdleState.BorderRadius = 16;
             this.hangHoaBtn.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.hangHoaBtn.OnIdleState.BorderThickness = 0;
-            this.hangHoaBtn.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.hangHoaBtn.OnIdleState.FillColor = System.Drawing.Color.Transparent;
             this.hangHoaBtn.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.hangHoaBtn.OnIdleState.IconLeftImage = null;
             this.hangHoaBtn.OnIdleState.IconRightImage = null;
@@ -341,7 +357,7 @@
             this.hangHoaBtn.OnPressedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.hangHoaBtn.OnPressedState.IconLeftImage = null;
             this.hangHoaBtn.OnPressedState.IconRightImage = null;
-            this.hangHoaBtn.Size = new System.Drawing.Size(170, 44);
+            this.hangHoaBtn.Size = new System.Drawing.Size(224, 34);
             this.hangHoaBtn.TabIndex = 3;
             this.hangHoaBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.hangHoaBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -361,7 +377,7 @@
             this.qlkhBtn.AutoSizeLeftIcon = true;
             this.qlkhBtn.AutoSizeRightIcon = true;
             this.qlkhBtn.BackColor = System.Drawing.Color.Transparent;
-            this.qlkhBtn.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.qlkhBtn.BackColor1 = System.Drawing.Color.Transparent;
             this.qlkhBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("qlkhBtn.BackgroundImage")));
             this.qlkhBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.qlkhBtn.ButtonText = "Quản lý khách hàng";
@@ -393,11 +409,11 @@
             this.qlkhBtn.IdleBorderColor = System.Drawing.Color.Transparent;
             this.qlkhBtn.IdleBorderRadius = 16;
             this.qlkhBtn.IdleBorderThickness = 1;
-            this.qlkhBtn.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.qlkhBtn.IdleFillColor = System.Drawing.Color.Transparent;
             this.qlkhBtn.IdleIconLeftImage = null;
             this.qlkhBtn.IdleIconRightImage = null;
             this.qlkhBtn.IndicateFocus = false;
-            this.qlkhBtn.Location = new System.Drawing.Point(12, 97);
+            this.qlkhBtn.Location = new System.Drawing.Point(12, 67);
             this.qlkhBtn.Name = "qlkhBtn";
             this.qlkhBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.qlkhBtn.OnDisabledState.BorderRadius = 16;
@@ -419,7 +435,7 @@
             this.qlkhBtn.OnIdleState.BorderRadius = 16;
             this.qlkhBtn.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.qlkhBtn.OnIdleState.BorderThickness = 0;
-            this.qlkhBtn.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.qlkhBtn.OnIdleState.FillColor = System.Drawing.Color.Transparent;
             this.qlkhBtn.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.qlkhBtn.OnIdleState.IconLeftImage = null;
             this.qlkhBtn.OnIdleState.IconRightImage = null;
@@ -431,7 +447,7 @@
             this.qlkhBtn.OnPressedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.qlkhBtn.OnPressedState.IconLeftImage = null;
             this.qlkhBtn.OnPressedState.IconRightImage = null;
-            this.qlkhBtn.Size = new System.Drawing.Size(170, 44);
+            this.qlkhBtn.Size = new System.Drawing.Size(224, 34);
             this.qlkhBtn.TabIndex = 3;
             this.qlkhBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.qlkhBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -521,7 +537,7 @@
             this.bunifuButton1.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.OnPressedState.IconLeftImage = null;
             this.bunifuButton1.OnPressedState.IconRightImage = null;
-            this.bunifuButton1.Size = new System.Drawing.Size(150, 39);
+            this.bunifuButton1.Size = new System.Drawing.Size(215, 39);
             this.bunifuButton1.TabIndex = 0;
             this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -536,7 +552,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1152, 657);
+            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.bunifuPanel1);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.IsMdiContainer = true;
             this.Name = "Dashboard";
             this.Text = "Dashboard";
@@ -555,5 +573,6 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton hoaDonBtn;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton loaiHangBtn;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton hangHoaBtn;
+        private Bunifu.UI.WinForms.BunifuPanel mainPanel;
     }
 }

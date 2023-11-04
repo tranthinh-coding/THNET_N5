@@ -81,7 +81,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                 formHoaDon = new QLHoaDon();
                 formHoaDon.FormClosed += FormHoaDon_Closed;
                 formHoaDon.MdiParent = this;
-                formHangHoa.Dock = DockStyle.Fill;
+                formHoaDon.Dock = DockStyle.Fill;
                 formHoaDon.Show();
             }
         }
@@ -111,7 +111,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                 formKhachHang = new QLKhachHang();
                 formKhachHang.FormClosed += FormKH_Closed;
                 formKhachHang.MdiParent = this;
-                formHangHoa.Dock = DockStyle.Fill;
+                formKhachHang.Dock = DockStyle.Fill;
                 formKhachHang.Show();
             }
         }
@@ -139,9 +139,14 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                 formLoaiHang = new QLLoaiHang();
                 formLoaiHang.FormClosed += FormLoaiHang_Closed;
                 formLoaiHang.MdiParent = this;
-                formHangHoa.Dock = DockStyle.Fill;
+                formLoaiHang.Dock = DockStyle.Fill;
                 formLoaiHang.Show();
             }
+        }
+
+        private void mainPanel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
