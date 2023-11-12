@@ -66,6 +66,8 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             txtMaLoai.Text = "";
             txtLoaiHang.Text = "";
             txtMaLoai.Focus();
+            txtMaLoai.Enabled = true;
+            txtLoaiHang.Enabled = true;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -103,23 +105,36 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         private void btnDelete_Click(object sender, EventArgs e)
         {
             txtMaLoai.Text = "";
-            txtLoaiHang.Text = ""; 
+            txtLoaiHang.Text = "";
             
-            if (CurrRowSelect >= 0)
+            // Kiem tra loai hang co ton tai hay khong
+            try
             {
-                LoaiHang loaihang = db.LoaiHangs.Single(lh => lh.MaLoai == dtViewLoaiHang.Rows[CurrRowSelect].Cells["MaLoai"].Value.ToString());
-                db.LoaiHangs.DeleteOnSubmit(loaihang);
-                db.SubmitChanges();
-                Render();
-            } else
+                if (CurrRowSelect >= 0)
+                {
+                    LoaiHang loaihang = db.LoaiHangs.Single(lh => lh.MaLoai == dtViewLoaiHang.Rows[CurrRowSelect].Cells["MaLoai"].Value.ToString());
+                    db.LoaiHangs.DeleteOnSubmit(loaihang);
+                    db.SubmitChanges();
+                    Render();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng select để xóa", "Error");
+                }
+            } catch (Exception err)
             {
-                MessageBox.Show("Vui lòng select để xóa", "Error");
+                // Thong bao co san pham dang lien ket voi loaihang nay. Xac nhan xoa hay khong
+                MessageBox.Show("Không thể xoá loại hàng này.");
             }
+           
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             txtMaLoai.Enabled = false;
+            // Kiem tra loai hang co ton tai hay khong truoc khi sua
+            // Neu ton tai roi thi sua
+            // Neu khong ton tai thi them moi luon
             if (CurrRowSelect >= 0)
             {
                 LoaiHang loaihang = db.LoaiHangs.Single(lh => lh.MaLoai == dtViewLoaiHang.Rows[CurrRowSelect].Cells["MaLoai"].Value.ToString());
