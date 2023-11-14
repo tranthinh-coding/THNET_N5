@@ -73,6 +73,16 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                 return;
             }
         }
+
+        void resetError()
+        {
+            mkhErr.Text = "";
+            tkhErr.Text = "";
+            dcErr.Text = "";
+            quanErr.Text = "";
+            thanhphoErr.Text = "";
+        }
+
         private void resetTextBox()
         {
             mkhTb.Text = "";
@@ -97,6 +107,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         }
         private void addBtn_Click(object sender, EventArgs e)
         {
+            resetError();
             try
             {
                 if (kiemTra(mkhTb.Text) || kiemTra(tkhTb.Text) || kiemTra(diachiTb.Text) || kiemTra(quanTb.Text) || kiemTra(thanhphoTb.Text))
@@ -113,6 +124,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                     thanhphoErr.Text = thanhphoError;
                     return;
                 }
+
                 KhachHang kh = db.KhachHangs.SingleOrDefault(k => k.MaKH == mkhTb.Text);
                 bool ktraTonTaiKh = true;
                 if (kh == null)
@@ -150,6 +162,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         }
         private void qlkhGv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            resetError();
             try
             {
                 // Delete btn
@@ -224,6 +237,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             resetTextBox();
+            resetError();
         }
 
         private void searchTb_TextChanged(object sender, EventArgs e)
