@@ -13,12 +13,14 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
     public partial class Dashboard : Form
     {
         Color buttonNormalColor = Color.Transparent;
-        Color buttonActiveColor = Color.FromArgb(249, 252, 253);
+        Color buttonActiveColor = Color.FromArgb(244, 247, 248);
 
         QLKhachHang formKhachHang = null;
         QLHangHoa formHangHoa = null;
         QLLoaiHang formLoaiHang = null;
         QLHoaDon formHoaDon = null;
+
+        Form currentFormOpen = null;
 
         public Dashboard()
         {
@@ -66,87 +68,67 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
 
         private void resetButtonColor()
         {
-            qlkhBtn.BackColor = buttonNormalColor;
-            hangHoaBtn.BackColor = buttonNormalColor;
-            hoaDonBtn.BackColor = buttonNormalColor;
-            loaiHangBtn.BackColor = buttonNormalColor;
+            qlkhBtn.IdleFillColor = buttonNormalColor;
+            hangHoaBtn.IdleFillColor = buttonNormalColor;
+            hoaDonBtn.IdleFillColor = buttonNormalColor;
+            loaiHangBtn.IdleFillColor = buttonNormalColor;
         }
         private void qlhd_Click(object sender, EventArgs e)
         {
             resetButtonColor();
-            qlkhBtn.BackColor = buttonActiveColor;
+            currentFormOpen?.Hide();
+            hoaDonBtn.IdleFillColor = buttonActiveColor;
 
-            if (formHoaDon == null)
-            {
-                formHoaDon = new QLHoaDon();
-                formHoaDon.FormClosed += FormHoaDon_Closed;
-                formHoaDon.MdiParent = this;
-                formHoaDon.Dock = DockStyle.Fill;
-                formHoaDon.Show();
-            }
-        }
-        private void FormKH_Closed(object sender, FormClosedEventArgs e)
-        {
-            formKhachHang = null;
-        }
-        private void FormHoaDon_Closed(object sender, FormClosedEventArgs e)
-        {
-            formHoaDon = null;
-        }
-        private void FormHangHoa_Closed(object sender, FormClosedEventArgs e)
-        {
-            formHangHoa = null;
-        }
-        private void FormLoaiHang_Closed(object sender, FormClosedEventArgs e)
-        {
-            formLoaiHang = null;
+            formHoaDon = new QLHoaDon();
+
+            setForm(formHoaDon);
+
         }
 
         private void qlkh_Click(object sender, EventArgs e)
         {
-            qlkhBtn.BackColor = buttonActiveColor;
+            resetButtonColor();
+            currentFormOpen?.Hide();
 
-            if (formKhachHang == null)
-            {
-                formKhachHang = new QLKhachHang();
-                formKhachHang.FormClosed += FormKH_Closed;
-                formKhachHang.MdiParent = this;
-                formKhachHang.Dock = DockStyle.Fill;
-                formKhachHang.Show();
-            }
+            qlkhBtn.IdleFillColor = buttonActiveColor;
+
+            formKhachHang = new QLKhachHang();
+
+            setForm(formKhachHang);
         }
 
         private void qlhh_Click(object sender, EventArgs e)
         {
-            hangHoaBtn.BackColor = buttonActiveColor;
+            resetButtonColor();
+            currentFormOpen?.Hide();
 
-            if (formHangHoa == null)
-            {
-                formHangHoa = new QLHangHoa();
-                formHangHoa.FormClosed += FormHangHoa_Closed;
-                formHangHoa.MdiParent = this;
-                formHangHoa.Dock = DockStyle.Fill;
-                formHangHoa.Show();
-            }
+            hangHoaBtn.IdleFillColor = buttonActiveColor;
+
+            formHangHoa = new QLHangHoa();
+
+            setForm(formHangHoa);
         }
 
         private void qllh_Click(object sender, EventArgs e)
         {
-            loaiHangBtn.BackColor = buttonActiveColor;
+            currentFormOpen?.Close();
+            loaiHangBtn.IdleFillColor = buttonActiveColor;
 
-            if (formLoaiHang == null)
-            {
-                formLoaiHang = new QLLoaiHang();
-                formLoaiHang.FormClosed += FormLoaiHang_Closed;
-                formLoaiHang.MdiParent = this;
-                formLoaiHang.Dock = DockStyle.Fill;
-                formLoaiHang.Show();
-            }
+            formLoaiHang = new QLLoaiHang();
+
+            setForm(formLoaiHang);
         }
 
-        private void mainPanel_Click(object sender, EventArgs e)
+        void setForm(Form form)
         {
+            resetButtonColor();
+            currentFormOpen = form;
+            currentFormOpen.TopLevel = false;
+            currentFormOpen.MdiParent = this;
+            currentFormOpen.Parent = mainPanel;
+            currentFormOpen.Dock = DockStyle.Fill;
 
+            currentFormOpen.Show();
         }
     }
 }
