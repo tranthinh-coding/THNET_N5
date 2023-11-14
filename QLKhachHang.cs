@@ -21,12 +21,6 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
     public partial class QLKhachHang : Form
     {
         QLHHDBDataContext db;
-        string mkhError = null;
-        string tkhError = null;
-        string dcError = null;
-        string quanError = null;
-        string thanhphoError = null;
-        
         public QLKhachHang()
         {
             InitializeComponent();
@@ -98,12 +92,13 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             return string.IsNullOrEmpty(field);
             
         }
-        private void xuLyKiemTra(string field, ref string errStr)
+        private string xuLyKiemTra(string field)
         {
 
             if (kiemTra(field)) {
-                errStr = "Không được để trống!";
+                return "Không được để trống!";
             }
+            return null;
         }
         private void addBtn_Click(object sender, EventArgs e)
         {
@@ -112,16 +107,11 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             {
                 if (kiemTra(mkhTb.Text) || kiemTra(tkhTb.Text) || kiemTra(diachiTb.Text) || kiemTra(quanTb.Text) || kiemTra(thanhphoTb.Text))
                 {
-                    xuLyKiemTra(mkhTb.Text, ref mkhError);
-                    xuLyKiemTra(tkhTb.Text, ref tkhError);
-                    xuLyKiemTra(diachiTb.Text, ref dcError);
-                    xuLyKiemTra(quanTb.Text, ref quanError);
-                    xuLyKiemTra(thanhphoTb.Text, ref thanhphoError);
-                    mkhErr.Text = mkhError;
-                    tkhErr.Text = tkhError;
-                    dcErr.Text = dcError;
-                    quanErr.Text = quanError;
-                    thanhphoErr.Text = thanhphoError;
+                    mkhErr.Text = xuLyKiemTra(mkhTb.Text);
+                    tkhErr.Text = xuLyKiemTra(tkhTb.Text);
+                    dcErr.Text = xuLyKiemTra(diachiTb.Text);
+                    quanErr.Text = xuLyKiemTra(quanTb.Text);
+                    thanhphoErr.Text = xuLyKiemTra(thanhphoTb.Text);
                     return;
                 }
 
