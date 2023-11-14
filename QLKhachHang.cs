@@ -60,7 +60,6 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                 deleteColumn.UseColumnTextForButtonValue = true;
 
                 qlkhGv.Columns.Add(deleteColumn);
-                resetTextBox();
             }
             catch
             {
@@ -103,6 +102,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         private void addBtn_Click(object sender, EventArgs e)
         {
             resetError();
+            db = new QLHHDBDataContext();
             try
             {
                 if (kiemTra(mkhTb.Text) || kiemTra(tkhTb.Text) || kiemTra(diachiTb.Text) || kiemTra(quanTb.Text) || kiemTra(thanhphoTb.Text))
