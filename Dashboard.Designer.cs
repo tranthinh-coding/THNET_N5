@@ -556,9 +556,12 @@
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.bunifuPanel1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.IsMdiContainer = true;
+            this.MinimizeBox = false;
             this.Name = "Dashboard";
             this.Text = "Dashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.bunifuPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
