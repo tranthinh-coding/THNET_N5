@@ -86,11 +86,6 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             dtGridViewHangHoa.Enabled = true;
         }
 
-        private void dtGridViewHangHoa_SelectionChanged(object sender, EventArgs e)
-        {
-          
-        }
-
         public bool IsNumeric(string value)
         {
             return value.All(char.IsNumber);
@@ -165,10 +160,6 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                 {
                     db.SubmitChanges();
                     Render();
-                    //txtMahang.Clear();
-                    //txtTenHang.Clear();
-                    //txtDVT.Clear();
-                    //txtDonGia.Clear();
                 }
             }
             else
@@ -181,13 +172,24 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int select = dtGridViewHangHoa.SelectedCells[0].RowIndex;
+            string MaHang = dtGridViewHangHoa.Rows[select].Cells["MaHang"].Value.ToString();
 
-            HangHoa hanghoa = db.HangHoas.Single(hh => hh.MaHang == dtGridViewHangHoa.Rows[select].Cells["MaHang"].Value.ToString());
+            HangHoa hanghoa = db.HangHoas.Single(hh => hh.MaHang == MaHang);
+
+            // Xoa bo toan bo hoa don lien quan den mat hang
+            //var s = db.CT_HoaDons.Where(xxe => xxe.MaHang == MaHang);
+            //db.CT_HoaDons.DeleteAllOnSubmit(s);
 
             db.HangHoas.DeleteOnSubmit(hanghoa);
             db.SubmitChanges();
 
             Render();
+
+            txtMahang.Clear();
+            txtTenHang.Clear();
+            txtDVT.Clear();
+            txtDonGia.Clear();
+            txtMahang.Focus();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -226,14 +228,6 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             exSheet.Range["C4"].Value = "Loại Hàng";
             exSheet.Range["D4"].Value = "Đơn Vị Tính";
             exSheet.Range["E4"].Value = "Đơn Giá";
-
-            int dong = 5;
-            for (int i = 0; i < dtGridViewHangHoa.Rows.Count; i++)
-            {
-                //exSheet.Range["A" + (dong + i).ToString()].Value = dtViewLoaiHang.Rows[i].Cells["MaLoai"].Value.ToString();
-                //exSheet.Range["B"+ (dong + i).ToString() +":C" +(dong + i).ToString()].MergeCells = true;
-                //exSheet.Range["B" + (dong + i).ToString()].Value = dtViewLoaiHang.Rows[i].Cells["TenLoai"].Value.ToString();
-            }
 
             exSheet.Name = "QLHangHoa";
             // File excel hoạt động

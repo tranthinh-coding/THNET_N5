@@ -142,7 +142,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                 {
                     MessageBox.Show("Vui lòng select để xóa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-            } catch (Exception err)
+            } catch
             {
                 // Thong bao co san pham dang lien ket voi loaihang nay. Xac nhan xoa hay khong
                 MessageBox.Show("Không thể xoá loại hàng này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
