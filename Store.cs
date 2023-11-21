@@ -9,5 +9,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
     public class Store
     {
         public static NhanVien User = null;
+
+        public static List<HangHoa> Products = new List<HangHoa>();
     }
 }
