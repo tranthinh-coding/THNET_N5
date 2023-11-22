@@ -29,30 +29,30 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongTinHoaDon));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongTinHoaDon));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnThemHang = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.data = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.thanhTien = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.soHD = new System.Windows.Forms.Label();
             this.tenKhachHang = new System.Windows.Forms.Label();
             this.tenNV = new System.Windows.Forms.Label();
             this.ngayBan = new System.Windows.Forms.Label();
+            this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.thanhTien = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnThemHang = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
             this.bunifuPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -106,95 +106,6 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.label5.Size = new System.Drawing.Size(126, 32);
             this.label5.TabIndex = 4;
             this.label5.Text = "Ngày bán:";
-            // 
-            // btnThemHang
-            // 
-            this.btnThemHang.AllowAnimations = true;
-            this.btnThemHang.AllowMouseEffects = true;
-            this.btnThemHang.AllowToggling = false;
-            this.btnThemHang.AnimationSpeed = 200;
-            this.btnThemHang.AutoGenerateColors = false;
-            this.btnThemHang.AutoRoundBorders = false;
-            this.btnThemHang.AutoSizeLeftIcon = true;
-            this.btnThemHang.AutoSizeRightIcon = true;
-            this.btnThemHang.BackColor = System.Drawing.Color.Transparent;
-            this.btnThemHang.BackColor1 = System.Drawing.Color.DodgerBlue;
-            this.btnThemHang.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnThemHang.BackgroundImage")));
-            this.btnThemHang.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnThemHang.ButtonText = "In hóa đơn";
-            this.btnThemHang.ButtonTextMarginLeft = 0;
-            this.btnThemHang.ColorContrastOnClick = 45;
-            this.btnThemHang.ColorContrastOnHover = 45;
-            this.btnThemHang.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnThemHang.CustomizableEdges = borderEdges1;
-            this.btnThemHang.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnThemHang.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnThemHang.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnThemHang.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnThemHang.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnThemHang.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemHang.ForeColor = System.Drawing.Color.White;
-            this.btnThemHang.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemHang.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThemHang.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnThemHang.IconMarginLeft = 11;
-            this.btnThemHang.IconPadding = 10;
-            this.btnThemHang.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemHang.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThemHang.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnThemHang.IconSize = 25;
-            this.btnThemHang.IdleBorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnThemHang.IdleBorderRadius = 15;
-            this.btnThemHang.IdleBorderThickness = 1;
-            this.btnThemHang.IdleFillColor = System.Drawing.Color.DodgerBlue;
-            this.btnThemHang.IdleIconLeftImage = null;
-            this.btnThemHang.IdleIconRightImage = null;
-            this.btnThemHang.IndicateFocus = false;
-            this.btnThemHang.Location = new System.Drawing.Point(717, 742);
-            this.btnThemHang.Name = "btnThemHang";
-            this.btnThemHang.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnThemHang.OnDisabledState.BorderRadius = 15;
-            this.btnThemHang.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnThemHang.OnDisabledState.BorderThickness = 1;
-            this.btnThemHang.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnThemHang.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnThemHang.OnDisabledState.IconLeftImage = null;
-            this.btnThemHang.OnDisabledState.IconRightImage = null;
-            this.btnThemHang.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnThemHang.onHoverState.BorderRadius = 15;
-            this.btnThemHang.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnThemHang.onHoverState.BorderThickness = 1;
-            this.btnThemHang.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(180)))), ((int)(((byte)(253)))));
-            this.btnThemHang.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnThemHang.onHoverState.IconLeftImage = null;
-            this.btnThemHang.onHoverState.IconRightImage = null;
-            this.btnThemHang.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnThemHang.OnIdleState.BorderRadius = 15;
-            this.btnThemHang.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnThemHang.OnIdleState.BorderThickness = 1;
-            this.btnThemHang.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.btnThemHang.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnThemHang.OnIdleState.IconLeftImage = null;
-            this.btnThemHang.OnIdleState.IconRightImage = null;
-            this.btnThemHang.OnPressedState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnThemHang.OnPressedState.BorderRadius = 15;
-            this.btnThemHang.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnThemHang.OnPressedState.BorderThickness = 1;
-            this.btnThemHang.OnPressedState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.btnThemHang.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnThemHang.OnPressedState.IconLeftImage = null;
-            this.btnThemHang.OnPressedState.IconRightImage = null;
-            this.btnThemHang.Size = new System.Drawing.Size(258, 58);
-            this.btnThemHang.TabIndex = 6;
-            this.btnThemHang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnThemHang.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnThemHang.TextMarginLeft = 0;
-            this.btnThemHang.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnThemHang.UseDefaultRadiusAndThickness = true;
             // 
             // data
             // 
@@ -298,41 +209,6 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             // 
-            // bunifuPanel1
-            // 
-            this.bunifuPanel1.BackgroundColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
-            this.bunifuPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel1.BorderRadius = 3;
-            this.bunifuPanel1.BorderThickness = 1;
-            this.bunifuPanel1.Controls.Add(this.thanhTien);
-            this.bunifuPanel1.Controls.Add(this.label6);
-            this.bunifuPanel1.Location = new System.Drawing.Point(31, 667);
-            this.bunifuPanel1.Name = "bunifuPanel1";
-            this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(944, 45);
-            this.bunifuPanel1.TabIndex = 8;
-            // 
-            // thanhTien
-            // 
-            this.thanhTien.AutoSize = true;
-            this.thanhTien.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thanhTien.Location = new System.Drawing.Point(339, 7);
-            this.thanhTien.Name = "thanhTien";
-            this.thanhTien.Size = new System.Drawing.Size(0, 32);
-            this.thanhTien.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 7);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(260, 32);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Số tiền đã thanh toán:";
-            // 
             // soHD
             // 
             this.soHD.AutoSize = true;
@@ -368,6 +244,131 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.ngayBan.Name = "ngayBan";
             this.ngayBan.Size = new System.Drawing.Size(0, 32);
             this.ngayBan.TabIndex = 12;
+            // 
+            // bunifuPanel1
+            // 
+            this.bunifuPanel1.BackgroundColor = System.Drawing.Color.Transparent;
+            this.bunifuPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
+            this.bunifuPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
+            this.bunifuPanel1.BorderRadius = 3;
+            this.bunifuPanel1.BorderThickness = 1;
+            this.bunifuPanel1.Controls.Add(this.thanhTien);
+            this.bunifuPanel1.Controls.Add(this.label6);
+            this.bunifuPanel1.Location = new System.Drawing.Point(31, 667);
+            this.bunifuPanel1.Name = "bunifuPanel1";
+            this.bunifuPanel1.ShowBorders = true;
+            this.bunifuPanel1.Size = new System.Drawing.Size(944, 45);
+            this.bunifuPanel1.TabIndex = 8;
+            // 
+            // thanhTien
+            // 
+            this.thanhTien.AutoSize = true;
+            this.thanhTien.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thanhTien.Location = new System.Drawing.Point(339, 7);
+            this.thanhTien.Name = "thanhTien";
+            this.thanhTien.Size = new System.Drawing.Size(0, 32);
+            this.thanhTien.TabIndex = 9;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 7);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(260, 32);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Số tiền đã thanh toán:";
+            // 
+            // btnThemHang
+            // 
+            this.btnThemHang.AllowAnimations = true;
+            this.btnThemHang.AllowMouseEffects = true;
+            this.btnThemHang.AllowToggling = false;
+            this.btnThemHang.AnimationSpeed = 200;
+            this.btnThemHang.AutoGenerateColors = false;
+            this.btnThemHang.AutoRoundBorders = false;
+            this.btnThemHang.AutoSizeLeftIcon = true;
+            this.btnThemHang.AutoSizeRightIcon = true;
+            this.btnThemHang.BackColor = System.Drawing.Color.Transparent;
+            this.btnThemHang.BackColor1 = System.Drawing.Color.DodgerBlue;
+            this.btnThemHang.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnThemHang.BackgroundImage")));
+            this.btnThemHang.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnThemHang.ButtonText = "In hóa đơn";
+            this.btnThemHang.ButtonTextMarginLeft = 0;
+            this.btnThemHang.ColorContrastOnClick = 45;
+            this.btnThemHang.ColorContrastOnHover = 45;
+            this.btnThemHang.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnThemHang.CustomizableEdges = borderEdges1;
+            this.btnThemHang.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnThemHang.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnThemHang.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnThemHang.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnThemHang.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnThemHang.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemHang.ForeColor = System.Drawing.Color.White;
+            this.btnThemHang.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemHang.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThemHang.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnThemHang.IconMarginLeft = 11;
+            this.btnThemHang.IconPadding = 10;
+            this.btnThemHang.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemHang.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThemHang.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnThemHang.IconSize = 25;
+            this.btnThemHang.IdleBorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnThemHang.IdleBorderRadius = 15;
+            this.btnThemHang.IdleBorderThickness = 1;
+            this.btnThemHang.IdleFillColor = System.Drawing.Color.DodgerBlue;
+            this.btnThemHang.IdleIconLeftImage = null;
+            this.btnThemHang.IdleIconRightImage = null;
+            this.btnThemHang.IndicateFocus = false;
+            this.btnThemHang.Location = new System.Drawing.Point(717, 742);
+            this.btnThemHang.Name = "btnThemHang";
+            this.btnThemHang.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnThemHang.OnDisabledState.BorderRadius = 15;
+            this.btnThemHang.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnThemHang.OnDisabledState.BorderThickness = 1;
+            this.btnThemHang.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnThemHang.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnThemHang.OnDisabledState.IconLeftImage = null;
+            this.btnThemHang.OnDisabledState.IconRightImage = null;
+            this.btnThemHang.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnThemHang.onHoverState.BorderRadius = 15;
+            this.btnThemHang.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnThemHang.onHoverState.BorderThickness = 1;
+            this.btnThemHang.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(180)))), ((int)(((byte)(253)))));
+            this.btnThemHang.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnThemHang.onHoverState.IconLeftImage = null;
+            this.btnThemHang.onHoverState.IconRightImage = null;
+            this.btnThemHang.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnThemHang.OnIdleState.BorderRadius = 15;
+            this.btnThemHang.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnThemHang.OnIdleState.BorderThickness = 1;
+            this.btnThemHang.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnThemHang.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnThemHang.OnIdleState.IconLeftImage = null;
+            this.btnThemHang.OnIdleState.IconRightImage = null;
+            this.btnThemHang.OnPressedState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnThemHang.OnPressedState.BorderRadius = 15;
+            this.btnThemHang.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnThemHang.OnPressedState.BorderThickness = 1;
+            this.btnThemHang.OnPressedState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnThemHang.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnThemHang.OnPressedState.IconLeftImage = null;
+            this.btnThemHang.OnPressedState.IconRightImage = null;
+            this.btnThemHang.Size = new System.Drawing.Size(258, 58);
+            this.btnThemHang.TabIndex = 6;
+            this.btnThemHang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnThemHang.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnThemHang.TextMarginLeft = 0;
+            this.btnThemHang.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnThemHang.UseDefaultRadiusAndThickness = true;
+            this.btnThemHang.Click += new System.EventHandler(this.btnThemHang_Click);
             // 
             // ThongTinHoaDon
             // 

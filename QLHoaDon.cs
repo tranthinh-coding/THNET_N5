@@ -14,8 +14,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
     public partial class QLHoaDon : Form
     {
         QLHHDBDataContext db = new QLHHDBDataContext();
-        List<HangHoa> list = new List<HangHoa>();
-        DataTable table = new DataTable();
+        static DataTable table = new DataTable();
         public QLHoaDon()
         {
             InitializeComponent();
@@ -53,8 +52,8 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         long tongTienNumber = 0;
         private void btnThemHang_Click(object sender, EventArgs e)
         {
-            
-            if(btnSoLuong.Value > 0)
+            table.PrimaryKey = new DataColumn[] { table.Columns["TenHang"] };
+            if (btnSoLuong.Value > 0)
             {
                 var result = db.HangHoas.Where(p => p.MaHang == matHang.SelectedValue.ToString()).Select(p => new
                 {
@@ -66,17 +65,28 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                 {
                     DataRow row = table.NewRow();
 
-                    row["TenHang"] = item.TenHang;
-                    row["DonViTinh"] = item.DonViTinh;
-                    row["DonGia"] = item.DonGia;
-                    row["SoLuong"] = btnSoLuong.Value;
-                    row["TongTien"] = int.Parse(btnSoLuong.Value.ToString()) * int.Parse(item.DonGia.ToString());
-                    tongTienNumber += int.Parse(btnSoLuong.Value.ToString()) * int.Parse(item.DonGia.ToString());
-                    table.Rows.Add(row);
+                    var existingRow = table.Rows.Find(item.TenHang);
+                    if(existingRow != null)
+                    {
+                        existingRow["SoLuong"] = int.Parse(existingRow["SoLuong"].ToString()) + int.Parse(btnSoLuong.Value.ToString());
+
+                        existingRow["TongTien"] = int.Parse(existingRow["SoLuong"].ToString()) * int.Parse(existingRow["DonGia"].ToString());
+                        tongTienNumber += int.Parse(btnSoLuong.Value.ToString()) * int.Parse(item.DonGia.ToString());
+                    }
+                    else
+                    {
+                        row["TenHang"] = item.TenHang;
+                        row["DonViTinh"] = item.DonViTinh;
+                        row["DonGia"] = item.DonGia;
+                        row["SoLuong"] = btnSoLuong.Value;
+                        row["TongTien"] = int.Parse(btnSoLuong.Value.ToString()) * int.Parse(item.DonGia.ToString());
+                        tongTienNumber += int.Parse(btnSoLuong.Value.ToString()) * int.Parse(item.DonGia.ToString());
+                        table.Rows.Add(row);
+                    }
                 }
                 data.DataSource = table;
                 btnSoLuong.Value = 0;
-                thanhTien.Text = tongTienNumber.ToString("#,##0.00₫");
+                thanhTien.Text = tongTienNumber.ToString("#,##0₫");
             }
             else
             {
@@ -114,7 +124,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
 
                 KhachHang kh = new KhachHang();
 
-                CT_HoaDon cT_HoaDon = new CT_HoaDon();
+                
 
                 Random random = new Random();
 
@@ -161,7 +171,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                 hoaDon.maHoaDon = tbHoaDon.SoHD;
                 hoaDon.ngay = date.Value;
 
-                MessageBox.Show("Thanh toán thành công!");
+                
 
                 tbHoaDon.NgayBan = date.Value;
                 tbHoaDon.MaKH = comboboxTen.SelectedValue.ToString();
@@ -169,15 +179,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                 db.HoaDons.InsertOnSubmit(tbHoaDon);
                 db.SubmitChanges();
 
-                var result = db.HangHoas.Where(p => p.MaHang == matHang.SelectedValue.ToString()).Where(p => p.MaHang == cT_HoaDon.MaHang).Select(p => new
-                {
-                    p.DonGia
-                });
-
-                cT_HoaDon.SoHD = tbHoaDon.SoHD;
-                cT_HoaDon.MaHang = matHang.SelectedValue.ToString();
-                cT_HoaDon.SoLuong = int.Parse(btnSoLuong.Value.ToString());
-                cT_HoaDon.DonGia = cT_HoaDon.SoLuong * int.Parse(result.ToString());
+                MessageBox.Show("Thanh toán thành công!");
 
                 hoaDon.ShowDialog();
                 this.Close();
