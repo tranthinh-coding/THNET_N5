@@ -14,7 +14,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
     public partial class QLHoaDon : Form
     {
         QLHHDBDataContext db = new QLHHDBDataContext();
-        static DataTable table = new DataTable();
+        DataTable table = new DataTable();
         public QLHoaDon()
         {
             InitializeComponent();

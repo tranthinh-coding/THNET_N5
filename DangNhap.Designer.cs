@@ -55,10 +55,10 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Resources.login_object;
             this.pictureBox1.InitialImage = global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Resources.login_object;
-            this.pictureBox1.Location = new System.Drawing.Point(-70, -120);
+            this.pictureBox1.Location = new System.Drawing.Point(-93, -148);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(602, 748);
+            this.pictureBox1.Size = new System.Drawing.Size(803, 921);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
@@ -110,7 +110,8 @@
             this.bunifuButton1.IdleIconLeftImage = null;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = false;
-            this.bunifuButton1.Location = new System.Drawing.Point(549, 323);
+            this.bunifuButton1.Location = new System.Drawing.Point(732, 398);
+            this.bunifuButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.OnDisabledState.BorderRadius = 20;
@@ -144,7 +145,7 @@
             this.bunifuButton1.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.OnPressedState.IconLeftImage = null;
             this.bunifuButton1.OnPressedState.IconRightImage = null;
-            this.bunifuButton1.Size = new System.Drawing.Size(260, 47);
+            this.bunifuButton1.Size = new System.Drawing.Size(347, 58);
             this.bunifuButton1.TabIndex = 3;
             this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -160,10 +161,11 @@
             this.bunifuLabel2.AutoEllipsis = false;
             this.bunifuLabel2.CursorType = null;
             this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.bunifuLabel2.Location = new System.Drawing.Point(563, 109);
+            this.bunifuLabel2.Location = new System.Drawing.Point(751, 134);
+            this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(64, 20);
+            this.bunifuLabel2.Size = new System.Drawing.Size(82, 25);
             this.bunifuLabel2.TabIndex = 15;
             this.bunifuLabel2.Text = "Tài khoản";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -178,7 +180,8 @@
             this.taiKhoanErr.CursorType = System.Windows.Forms.Cursors.Default;
             this.taiKhoanErr.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.taiKhoanErr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(71)))), ((int)(((byte)(87)))));
-            this.taiKhoanErr.Location = new System.Drawing.Point(560, 184);
+            this.taiKhoanErr.Location = new System.Drawing.Point(747, 226);
+            this.taiKhoanErr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.taiKhoanErr.Name = "taiKhoanErr";
             this.taiKhoanErr.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.taiKhoanErr.Size = new System.Drawing.Size(0, 0);
@@ -213,7 +216,8 @@
             this.txtMatKhau.IconRight = null;
             this.txtMatKhau.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMatKhau.Lines = new string[0];
-            this.txtMatKhau.Location = new System.Drawing.Point(549, 236);
+            this.txtMatKhau.Location = new System.Drawing.Point(732, 290);
+            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMatKhau.MaxLength = 32767;
             this.txtMatKhau.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtMatKhau.Modified = false;
@@ -239,7 +243,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtMatKhau.OnIdleState = stateProperties4;
-            this.txtMatKhau.Padding = new System.Windows.Forms.Padding(3);
+            this.txtMatKhau.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtMatKhau.PlaceholderText = "******";
@@ -249,7 +253,7 @@
             this.txtMatKhau.SelectionLength = 0;
             this.txtMatKhau.SelectionStart = 0;
             this.txtMatKhau.ShortcutsEnabled = true;
-            this.txtMatKhau.Size = new System.Drawing.Size(260, 45);
+            this.txtMatKhau.Size = new System.Drawing.Size(347, 55);
             this.txtMatKhau.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtMatKhau.TabIndex = 2;
             this.txtMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -288,7 +292,8 @@
             this.txtTaiKhoan.IconRight = null;
             this.txtTaiKhoan.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTaiKhoan.Lines = new string[0];
-            this.txtTaiKhoan.Location = new System.Drawing.Point(549, 135);
+            this.txtTaiKhoan.Location = new System.Drawing.Point(732, 166);
+            this.txtTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTaiKhoan.MaxLength = 32767;
             this.txtTaiKhoan.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtTaiKhoan.Modified = false;
@@ -314,7 +319,7 @@
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtTaiKhoan.OnIdleState = stateProperties8;
-            this.txtTaiKhoan.Padding = new System.Windows.Forms.Padding(3);
+            this.txtTaiKhoan.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTaiKhoan.PasswordChar = '\0';
             this.txtTaiKhoan.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtTaiKhoan.PlaceholderText = "Mã nhân viên";
@@ -324,7 +329,7 @@
             this.txtTaiKhoan.SelectionLength = 0;
             this.txtTaiKhoan.SelectionStart = 0;
             this.txtTaiKhoan.ShortcutsEnabled = true;
-            this.txtTaiKhoan.Size = new System.Drawing.Size(260, 43);
+            this.txtTaiKhoan.Size = new System.Drawing.Size(347, 53);
             this.txtTaiKhoan.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtTaiKhoan.TabIndex = 1;
             this.txtTaiKhoan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -345,7 +350,8 @@
             this.matKhauErr.CursorType = System.Windows.Forms.Cursors.Default;
             this.matKhauErr.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.matKhauErr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(71)))), ((int)(((byte)(87)))));
-            this.matKhauErr.Location = new System.Drawing.Point(560, 287);
+            this.matKhauErr.Location = new System.Drawing.Point(747, 353);
+            this.matKhauErr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.matKhauErr.Name = "matKhauErr";
             this.matKhauErr.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.matKhauErr.Size = new System.Drawing.Size(0, 0);
@@ -360,10 +366,11 @@
             this.bunifuLabel1.AutoEllipsis = false;
             this.bunifuLabel1.CursorType = null;
             this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.bunifuLabel1.Location = new System.Drawing.Point(563, 210);
+            this.bunifuLabel1.Location = new System.Drawing.Point(751, 258);
+            this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(61, 20);
+            this.bunifuLabel1.Size = new System.Drawing.Size(79, 25);
             this.bunifuLabel1.TabIndex = 15;
             this.bunifuLabel1.Text = "Mật khẩu";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -377,7 +384,8 @@
             this.formError.CursorType = System.Windows.Forms.Cursors.Default;
             this.formError.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.formError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(71)))), ((int)(((byte)(87)))));
-            this.formError.Location = new System.Drawing.Point(563, 70);
+            this.formError.Location = new System.Drawing.Point(751, 86);
+            this.formError.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.formError.Name = "formError";
             this.formError.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.formError.Size = new System.Drawing.Size(0, 0);
@@ -387,10 +395,10 @@
             // 
             // DangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(888, 472);
+            this.ClientSize = new System.Drawing.Size(1184, 581);
             this.Controls.Add(this.formError);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.bunifuButton1);
@@ -401,7 +409,7 @@
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.txtTaiKhoan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DangNhap";
             this.Text = "Đăng nhập";
             this.Load += new System.EventHandler(this.DangNhap_Load);

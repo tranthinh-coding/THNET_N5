@@ -32,9 +32,9 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongKe));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.HangHoaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.QLBanHangTapHoaDataSet = new Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.QLBanHangTapHoaDataSet();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -43,11 +43,11 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.TKHD = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxYear = new System.Windows.Forms.ComboBox();
             this.BaoCaoMatHang = new Microsoft.Reporting.WinForms.ReportViewer();
             this.HangHoaTableAdapter = new Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.QLBanHangTapHoaDataSetTableAdapters.HangHoaTableAdapter();
-            this.comboBoxYear = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             ((System.ComponentModel.ISupportInitialize)(this.HangHoaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QLBanHangTapHoaDataSet)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -83,11 +83,11 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.reportViewer1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 40);
+            this.tabPage1.Location = new System.Drawing.Point(4, 37);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.tabPage1.Size = new System.Drawing.Size(1198, 719);
+            this.tabPage1.Size = new System.Drawing.Size(1198, 722);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Mặt hàng";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -102,17 +102,17 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.reportViewer1.Location = new System.Drawing.Point(6, 7);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1186, 705);
+            this.reportViewer1.Size = new System.Drawing.Size(1186, 708);
             this.reportViewer1.TabIndex = 0;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.TKHD);
-            this.tabPage2.Location = new System.Drawing.Point(4, 40);
+            this.tabPage2.Location = new System.Drawing.Point(4, 37);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.tabPage2.Size = new System.Drawing.Size(1198, 719);
+            this.tabPage2.Size = new System.Drawing.Size(1198, 722);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Hóa đơn";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -127,7 +127,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.TKHD.Location = new System.Drawing.Point(6, 7);
             this.TKHD.Name = "TKHD";
             this.TKHD.ServerReport.BearerToken = null;
-            this.TKHD.Size = new System.Drawing.Size(1186, 705);
+            this.TKHD.Size = new System.Drawing.Size(1186, 708);
             this.TKHD.TabIndex = 1;
             // 
             // tabPage3
@@ -143,45 +143,6 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Báo cáo bán hàng";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // BaoCaoMatHang
-            // 
-            reportDataSource3.Name = "DataSet1";
-            reportDataSource3.Value = this.HangHoaBindingSource;
-            this.BaoCaoMatHang.LocalReport.DataSources.Add(reportDataSource3);
-            this.BaoCaoMatHang.LocalReport.ReportEmbeddedResource = "Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.ThongKeMatHang.rdlc";
-            this.BaoCaoMatHang.Location = new System.Drawing.Point(3, 93);
-            this.BaoCaoMatHang.Name = "BaoCaoMatHang";
-            this.BaoCaoMatHang.ServerReport.BearerToken = null;
-            this.BaoCaoMatHang.Size = new System.Drawing.Size(1195, 623);
-            this.BaoCaoMatHang.TabIndex = 2;
-            // 
-            // HangHoaTableAdapter
-            // 
-            this.HangHoaTableAdapter.ClearBeforeFill = true;
-            // 
-            // comboBoxYear
-            // 
-            this.comboBoxYear.FormattingEnabled = true;
-            this.comboBoxYear.Items.AddRange(new object[] {
-            "Tất cả",
-            "2023",
-            "2022",
-            "2021",
-            "2020"});
-            this.comboBoxYear.Location = new System.Drawing.Point(194, 20);
-            this.comboBoxYear.Name = "comboBoxYear";
-            this.comboBoxYear.Size = new System.Drawing.Size(166, 36);
-            this.comboBoxYear.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 28);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Chọn năm";
             // 
             // bunifuButton1
             // 
@@ -273,6 +234,45 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.bunifuButton1.UseDefaultRadiusAndThickness = true;
             this.bunifuButton1.Click += new System.EventHandler(this.bunifuButton1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(50, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 28);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Chọn năm";
+            // 
+            // comboBoxYear
+            // 
+            this.comboBoxYear.FormattingEnabled = true;
+            this.comboBoxYear.Items.AddRange(new object[] {
+            "Tất cả",
+            "2023",
+            "2022",
+            "2021",
+            "2020"});
+            this.comboBoxYear.Location = new System.Drawing.Point(194, 20);
+            this.comboBoxYear.Name = "comboBoxYear";
+            this.comboBoxYear.Size = new System.Drawing.Size(166, 36);
+            this.comboBoxYear.TabIndex = 3;
+            // 
+            // BaoCaoMatHang
+            // 
+            reportDataSource3.Name = "DataSet1";
+            reportDataSource3.Value = this.HangHoaBindingSource;
+            this.BaoCaoMatHang.LocalReport.DataSources.Add(reportDataSource3);
+            this.BaoCaoMatHang.LocalReport.ReportEmbeddedResource = "Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.ThongKeMatHang.rdlc";
+            this.BaoCaoMatHang.Location = new System.Drawing.Point(3, 93);
+            this.BaoCaoMatHang.Name = "BaoCaoMatHang";
+            this.BaoCaoMatHang.ServerReport.BearerToken = null;
+            this.BaoCaoMatHang.Size = new System.Drawing.Size(1195, 623);
+            this.BaoCaoMatHang.TabIndex = 2;
+            // 
+            // HangHoaTableAdapter
+            // 
+            this.HangHoaTableAdapter.ClearBeforeFill = true;
+            // 
             // ThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 37F);
@@ -280,6 +280,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.ClientSize = new System.Drawing.Size(1206, 763);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "ThongKe";
             this.Text = "Thống kê ";

@@ -19,6 +19,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         QLHangHoa formHangHoa = null;
         QLLoaiHang formLoaiHang = null;
         QLHoaDon formHoaDon = null;
+        ThongKe formThongKe = null;
 
         Form currentFormOpen = null;
 
@@ -38,32 +39,8 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            //usrName.Text = Store.User.TenNV;
-            /*
-            QLHHDBDataContext db = new QLHHDBDataContext();
-
-            var res = db.HangHoas.Select(p =>
-                new {
-                    p.MaHang,
-                    p.TenHang,
-                    p.LoaiHang,
-                    p.DonGia,
-                    p.DonViTinh
-                });
-
-            DataTable table = new DataTable();
-            table.Columns.Add("Mã");
-            table.Columns.Add("Tên hàng");
-            table.Columns.Add("Loại hàng");
-            table.Columns.Add("Đơn giá");
-            table.Columns.Add("Đơn vị tính");
-
-            foreach (var item in res)
-            {
-                table.Rows.Add(item.MaHang, item.TenHang, item.LoaiHang, item.DonGia, item.DonViTinh);
-            }
-            */
             resetButtonColor();
+            thongKeBtn.Visible = Store.IsAdmin();
         }
 
         private void resetButtonColor()
@@ -72,6 +49,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             hangHoaBtn.IdleFillColor = buttonNormalColor;
             hoaDonBtn.IdleFillColor = buttonNormalColor;
             loaiHangBtn.IdleFillColor = buttonNormalColor;
+            thongKeBtn.IdleFillColor = buttonNormalColor;
         }
         private void qlhd_Click(object sender, EventArgs e)
         {
@@ -83,6 +61,17 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
 
             setForm(formHoaDon);
 
+        }
+
+        private void qltk_Click(object sender, EventArgs e)
+        {
+            resetButtonColor();
+            currentFormOpen?.Hide();
+            thongKeBtn.IdleFillColor = buttonActiveColor;
+
+            formThongKe = new ThongKe();
+
+            setForm(formThongKe);
         }
 
         private void qlkh_Click(object sender, EventArgs e)
@@ -111,7 +100,10 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
 
         private void qllh_Click(object sender, EventArgs e)
         {
-            currentFormOpen?.Close();
+            //currentFormOpen?.Close();
+            resetButtonColor();
+            currentFormOpen?.Hide();
+
             loaiHangBtn.IdleFillColor = buttonActiveColor;
 
             formLoaiHang = new QLLoaiHang();
