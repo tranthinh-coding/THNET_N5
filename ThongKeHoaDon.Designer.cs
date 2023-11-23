@@ -1946,7 +1946,7 @@ SELECT SoHD, MaHang, SoLuong, DonGia FROM CT_HoaDon WHERE (MaHang = @MaHang) AND
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Settings.Default.QLBanHangTapHoaConnectionString1;
+            this._connection.ConnectionString = global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Settings.Default.QLBanHangTapHoaConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2357,7 +2357,7 @@ SELECT SoHD, NgayBan, MaKH, MaNV FROM HoaDon WHERE (SoHD = @SoHD)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Settings.Default.QLBanHangTapHoaConnectionString1;
+            this._connection.ConnectionString = global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Settings.Default.QLBanHangTapHoaConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2779,7 +2779,7 @@ SELECT MaKH, TenKH, DiaChi, Quan, ThanhPho FROM KhachHang WHERE (MaKH = @MaKH)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Settings.Default.QLBanHangTapHoaConnectionString1;
+            this._connection.ConnectionString = global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Settings.Default.QLBanHangTapHoaConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

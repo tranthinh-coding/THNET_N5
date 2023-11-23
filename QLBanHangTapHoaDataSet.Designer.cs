@@ -1371,7 +1371,6 @@ SELECT MaHang, LoaiHang, TenHang, DonViTinh, DonGia FROM HangHoa WHERE (MaHang =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Settings.Default.QLBanHangTapHoaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1802,7 +1801,7 @@ SELECT MaHang, LoaiHang, TenHang, DonViTinh, DonGia FROM HangHoa WHERE (MaHang =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Settings.Default.QLBanHangTapHoaConnectionString1;
+            this._connection.ConnectionString = global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Settings.Default.QLBanHangTapHoaConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

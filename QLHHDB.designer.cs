@@ -51,7 +51,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
     #endregion
 		
 		public QLHHDBDataContext() : 
-				base(global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Settings.Default.QLBanHangTapHoaConnectionString1, mappingSource)
+				base(global::Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Settings.Default.QLBanHangTapHoaConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

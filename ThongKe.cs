@@ -124,10 +124,6 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             TKHD.LocalReport.DataSources.Add(soure4);
             TKHD.LocalReport.DataSources.Add(soure6);
             this.TKHD.RefreshReport();
-
-            
-
-            
         }
 
         private void bunifuButton1_Click(object sender, EventArgs e)
@@ -137,23 +133,34 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             dtHangHoa.Columns.Add("SoLuong");
             dtHangHoa.Columns.Add("DonGia");
             
-            var dsHangHoa = from a in db.CT_HoaDons
-                            join b in db.HangHoas on a.MaHang equals b.MaHang
-                            group a by b.TenHang into g
-                            select new
-                            {
-                                TenHang = g.Key,
-                                SoLuong = g.Sum(x => x.SoLuong),
-                                ThanhTien = g.Sum(x => x.DonGia)
-                            };
             long tongTien = 0;
             int year = 0;
-            if (comboBoxYear.SelectedItem.ToString().Contains("2023"))
+
+            int YearSelectedIndex = comboBoxYear.SelectedIndex;
+
+            // Loai tru truong hop tat ca - phan tu dau tien
+            if (YearSelectedIndex > 0)
+            {
+                year = int.Parse(comboBoxYear.SelectedItem.ToString());
+            }
+
+            var dsHangHoa = from a in db.CT_HoaDons
+                        join b in db.HangHoas on a.MaHang equals b.MaHang
+                        join c in db.HoaDons on a.SoHD equals c.SoHD
+                        group a by b.TenHang into g
+                        select new
+                        {
+                            TenHang = g.Key,
+                            SoLuong = g.Sum(x => x.SoLuong),
+                            ThanhTien = g.Sum(x => x.DonGia)
+                        };
+
+            if (year != 0)
             {
                 dsHangHoa = from a in db.CT_HoaDons
                             join b in db.HangHoas on a.MaHang equals b.MaHang
                             join c in db.HoaDons on a.SoHD equals c.SoHD
-                            where c.NgayBan.Value.Year == 2023
+                            where c.NgayBan.Value.Year == year
                             group a by b.TenHang into g
                             select new
                             {
@@ -161,57 +168,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                                 SoLuong = g.Sum(x => x.SoLuong),
                                 ThanhTien = g.Sum(x => x.DonGia)
                             };
-                year = 2023;
             }
-
-            else if (comboBoxYear.SelectedItem.ToString().Contains("2022"))
-            {
-                dsHangHoa = from a in db.CT_HoaDons
-                            join b in db.HangHoas on a.MaHang equals b.MaHang
-                            join c in db.HoaDons on a.SoHD equals c.SoHD
-                            where c.NgayBan.Value.Year == 2022
-                            group a by b.TenHang into g
-                            select new
-                            {
-                                TenHang = g.Key,
-                                SoLuong = g.Sum(x => x.SoLuong),
-                                ThanhTien = g.Sum(x => x.DonGia)
-                            };
-                year = 2022;
-            }
-
-            else if (comboBoxYear.SelectedItem.ToString().Contains("2021"))
-            {
-                dsHangHoa = from a in db.CT_HoaDons
-                            join b in db.HangHoas on a.MaHang equals b.MaHang
-                            join c in db.HoaDons on a.SoHD equals c.SoHD
-                            where c.NgayBan.Value.Year == 2021
-                            group a by b.TenHang into g
-                            select new
-                            {
-                                TenHang = g.Key,
-                                SoLuong = g.Sum(x => x.SoLuong),
-                                ThanhTien = g.Sum(x => x.DonGia)
-                            };
-                year = 2021;
-            }
-            else if (comboBoxYear.SelectedItem.ToString().Contains("2020"))
-            {
-                dsHangHoa = from a in db.CT_HoaDons
-                            join b in db.HangHoas on a.MaHang equals b.MaHang
-                            join c in db.HoaDons on a.SoHD equals c.SoHD
-                            where c.NgayBan.Value.Year == 2020
-                            group a by b.TenHang into g
-                            select new
-                            {
-                                TenHang = g.Key,
-                                SoLuong = g.Sum(x => x.SoLuong),
-                                ThanhTien = g.Sum(x => x.DonGia)
-                            };
-                year = 2020;
-            }
-
-
 
             foreach (var item in dsHangHoa)
             {
