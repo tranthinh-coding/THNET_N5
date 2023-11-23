@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLBanHangTapHoa" Class="QLHHDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=THINK\SQLEXPRESS;Initial Catalog=QLBanHangTapHoa;Integrated Security=True" SettingsObjectName="Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Settings" SettingsPropertyName="QLBanHangTapHoaConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.CT_HoaDon" Member="CT_HoaDons">
-    <Type Name="CT_HoaDon">
-      <Column Name="SoHD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="MaHang" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DonGia" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="HangHoa_CT_HoaDon" Member="HangHoa" ThisKey="MaHang" OtherKey="MaHang" Type="HangHoa" IsForeignKey="true" />
-      <Association Name="HoaDon_CT_HoaDon" Member="HoaDon" ThisKey="SoHD" OtherKey="SoHD" Type="HoaDon" IsForeignKey="true" />
-    </Type>
-  </Table>
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DOOTEE;Initial Catalog=QLBanHangTapHoa;Integrated Security=True" SettingsObjectName="Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet.Properties.Settings" SettingsPropertyName="QLBanHangTapHoaConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.NhanVien" Member="NhanViens">
     <Type Name="NhanVien">
       <Column Name="MaNV" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -18,6 +8,34 @@
       <Column Name="MatKhau" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Column Name="Quyen" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="NhanVien_HoaDon" Member="HoaDons" ThisKey="MaNV" OtherKey="MaNV" Type="HoaDon" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoaiHang" Member="LoaiHangs">
+    <Type Name="LoaiHang">
+      <Column Name="MaLoai" Type="System.String" DbType="VarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenLoai" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="LoaiHang_HangHoa" Member="HangHoas" ThisKey="MaLoai" OtherKey="LoaiHang" Type="HangHoa" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhachHang" Member="KhachHangs">
+    <Type Name="KhachHang">
+      <Column Name="MaKH" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenKH" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Quan" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ThanhPho" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="KhachHang_HoaDon" Member="HoaDons" ThisKey="MaKH" OtherKey="MaKH" Type="HoaDon" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HoaDon" Member="HoaDons">
+    <Type Name="HoaDon">
+      <Column Name="SoHD" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NgayBan" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaKH" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="HoaDon_CT_HoaDon" Member="CT_HoaDons" ThisKey="SoHD" OtherKey="SoHD" Type="CT_HoaDon" />
+      <Association Name="KhachHang_HoaDon" Member="KhachHang" ThisKey="MaKH" OtherKey="MaKH" Type="KhachHang" IsForeignKey="true" />
+      <Association Name="NhanVien_HoaDon" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.HangHoa" Member="HangHoas">
@@ -31,32 +49,14 @@
       <Association Name="LoaiHang_HangHoa" Member="LoaiHang1" ThisKey="LoaiHang" OtherKey="MaLoai" Type="LoaiHang" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.HoaDon" Member="HoaDons">
-    <Type Name="HoaDon">
-      <Column Name="SoHD" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="NgayBan" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="MaKH" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="MaNV" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="HoaDon_CT_HoaDon" Member="CT_HoaDons" ThisKey="SoHD" OtherKey="SoHD" Type="CT_HoaDon" />
-      <Association Name="NhanVien_HoaDon" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
-      <Association Name="KhachHang_HoaDon" Member="KhachHang" ThisKey="MaKH" OtherKey="MaKH" Type="KhachHang" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.KhachHang" Member="KhachHangs">
-    <Type Name="KhachHang">
-      <Column Name="MaKH" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenKH" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="Quan" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="ThanhPho" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Association Name="KhachHang_HoaDon" Member="HoaDons" ThisKey="MaKH" OtherKey="MaKH" Type="HoaDon" />
-    </Type>
-  </Table>
-  <Table Name="dbo.LoaiHang" Member="LoaiHangs">
-    <Type Name="LoaiHang">
-      <Column Name="MaLoai" Type="System.String" DbType="VarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenLoai" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Association Name="LoaiHang_HangHoa" Member="HangHoas" ThisKey="MaLoai" OtherKey="LoaiHang" Type="HangHoa" />
+  <Table Name="dbo.CT_HoaDon" Member="CT_HoaDons">
+    <Type Name="CT_HoaDon">
+      <Column Name="SoHD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MaHang" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DonGia" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="HangHoa_CT_HoaDon" Member="HangHoa" ThisKey="MaHang" OtherKey="MaHang" Type="HangHoa" IsForeignKey="true" />
+      <Association Name="HoaDon_CT_HoaDon" Member="HoaDon" ThisKey="SoHD" OtherKey="SoHD" Type="HoaDon" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
