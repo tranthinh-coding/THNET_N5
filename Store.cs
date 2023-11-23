@@ -9,5 +9,6 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
     public class Store
     {
         public static NhanVien User = null;
+        public long TongTien { get; set; }
     }
 }
