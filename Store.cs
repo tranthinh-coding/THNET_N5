@@ -11,5 +11,6 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         public static NhanVien User = null;
 
         public static List<HangHoa> Products = new List<HangHoa>();
+        public long TongTien { get; set; }
     }
 }
