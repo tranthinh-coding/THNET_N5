@@ -265,6 +265,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QLHangHoa.resx">
       <DependentUpon>QLHangHoa.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="QLLoaiHang.resx">
       <DependentUpon>QLLoaiHang.cs</DependentUpon>

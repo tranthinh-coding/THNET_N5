@@ -321,5 +321,18 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             DataTable dt = tableCollection[comboBox1.SelectedItem.ToString()];
             dtGridViewHangHoa.DataSource = dt;
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtMahang.Clear();
+            txtTenHang.Clear();
+            txtDVT.Clear();
+            txtDonGia.Clear();
+            txtMahang.Enabled = true;
+            txtTenHang.Enabled = true;
+            txtDVT.Enabled = true;
+            txtDonGia.Enabled = true;
+            txtMahang.Focus();
+        }
     }
 }
