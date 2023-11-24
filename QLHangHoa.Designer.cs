@@ -62,6 +62,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewHangHoa)).BeginInit();
@@ -101,7 +103,7 @@
             // cbBLoaiHang
             // 
             this.cbBLoaiHang.FormattingEnabled = true;
-            this.cbBLoaiHang.Location = new System.Drawing.Point(218, 135);
+            this.cbBLoaiHang.Location = new System.Drawing.Point(218, 213);
             this.cbBLoaiHang.Name = "cbBLoaiHang";
             this.cbBLoaiHang.Size = new System.Drawing.Size(211, 41);
             this.cbBLoaiHang.TabIndex = 10;
@@ -122,7 +124,7 @@
             // 
             // txtTenHang
             // 
-            this.txtTenHang.Location = new System.Drawing.Point(218, 214);
+            this.txtTenHang.Location = new System.Drawing.Point(218, 136);
             this.txtTenHang.Name = "txtTenHang";
             this.txtTenHang.Size = new System.Drawing.Size(211, 40);
             this.txtTenHang.TabIndex = 7;
@@ -158,7 +160,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(58, 227);
+            this.label4.Location = new System.Drawing.Point(58, 149);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 27);
             this.label4.TabIndex = 2;
@@ -168,7 +170,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(51, 149);
+            this.label3.Location = new System.Drawing.Point(58, 227);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 27);
             this.label3.TabIndex = 1;
@@ -305,7 +307,7 @@
             this.btnDelete.IdleIconLeftImage = null;
             this.btnDelete.IdleIconRightImage = null;
             this.btnDelete.IndicateFocus = false;
-            this.btnDelete.Location = new System.Drawing.Point(1027, 606);
+            this.btnDelete.Location = new System.Drawing.Point(780, 606);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDelete.OnDisabledState.BorderRadius = 24;
@@ -395,7 +397,7 @@
             this.btnEdit.IdleIconLeftImage = null;
             this.btnEdit.IdleIconRightImage = null;
             this.btnEdit.IndicateFocus = false;
-            this.btnEdit.Location = new System.Drawing.Point(739, 606);
+            this.btnEdit.Location = new System.Drawing.Point(542, 606);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnEdit.OnDisabledState.BorderRadius = 24;
@@ -485,7 +487,7 @@
             this.btnAdd.IdleIconLeftImage = null;
             this.btnAdd.IdleIconRightImage = null;
             this.btnAdd.IndicateFocus = false;
-            this.btnAdd.Location = new System.Drawing.Point(425, 606);
+            this.btnAdd.Location = new System.Drawing.Point(325, 606);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAdd.OnDisabledState.BorderRadius = 24;
@@ -575,7 +577,7 @@
             this.btnRender.IdleIconLeftImage = null;
             this.btnRender.IdleIconRightImage = null;
             this.btnRender.IndicateFocus = false;
-            this.btnRender.Location = new System.Drawing.Point(153, 606);
+            this.btnRender.Location = new System.Drawing.Point(119, 606);
             this.btnRender.Name = "btnRender";
             this.btnRender.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnRender.OnDisabledState.BorderRadius = 24;
@@ -645,7 +647,7 @@
             this.txtSearch.IconRight = null;
             this.txtSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.Lines = new string[0];
-            this.txtSearch.Location = new System.Drawing.Point(829, 83);
+            this.txtSearch.Location = new System.Drawing.Point(880, 77);
             this.txtSearch.MaxLength = 32767;
             this.txtSearch.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtSearch.Modified = false;
@@ -708,7 +710,8 @@
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportExcelToolStripMenuItem});
+            this.exportExcelToolStripMenuItem,
+            this.importExcelToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(73, 29);
             this.menuToolStripMenuItem.Text = "Menu";
@@ -716,9 +719,27 @@
             // exportExcelToolStripMenuItem
             // 
             this.exportExcelToolStripMenuItem.Name = "exportExcelToolStripMenuItem";
-            this.exportExcelToolStripMenuItem.Size = new System.Drawing.Size(208, 34);
+            this.exportExcelToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.exportExcelToolStripMenuItem.Size = new System.Drawing.Size(277, 34);
             this.exportExcelToolStripMenuItem.Text = "Export Excel";
             this.exportExcelToolStripMenuItem.Click += new System.EventHandler(this.exportExcelToolStripMenuItem_Click);
+            // 
+            // importExcelToolStripMenuItem
+            // 
+            this.importExcelToolStripMenuItem.Name = "importExcelToolStripMenuItem";
+            this.importExcelToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.importExcelToolStripMenuItem.Size = new System.Drawing.Size(277, 34);
+            this.importExcelToolStripMenuItem.Text = "Import Excel";
+            this.importExcelToolStripMenuItem.Click += new System.EventHandler(this.importExcelToolStripMenuItem_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(1121, 606);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(147, 28);
+            this.comboBox1.TabIndex = 19;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // QLHangHoa
             // 
@@ -726,6 +747,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1313, 674);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
@@ -776,5 +798,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportExcelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importExcelToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
