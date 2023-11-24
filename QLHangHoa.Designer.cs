@@ -246,7 +246,7 @@
             this.dtGridViewHangHoa.EnableHeadersVisualStyles = false;
             this.dtGridViewHangHoa.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.dtGridViewHangHoa.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.dtGridViewHangHoa.HeaderBgColor = System.Drawing.Color.Empty;
+            this.dtGridViewHangHoa.HeaderBackColor = System.Drawing.Color.Empty;
             this.dtGridViewHangHoa.HeaderForeColor = System.Drawing.Color.White;
             this.dtGridViewHangHoa.Location = new System.Drawing.Point(17, 39);
             this.dtGridViewHangHoa.Name = "dtGridViewHangHoa";
@@ -258,7 +258,6 @@
             this.dtGridViewHangHoa.TabIndex = 0;
             this.dtGridViewHangHoa.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.dtGridViewHangHoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridViewHangHoa_CellClick);
-            this.dtGridViewHangHoa.SelectionChanged += new System.EventHandler(this.dtGridViewHangHoa_SelectionChanged);
             // 
             // btnDelete
             // 

@@ -429,7 +429,7 @@
             this.dtViewLoaiHang.EnableHeadersVisualStyles = false;
             this.dtViewLoaiHang.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.dtViewLoaiHang.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.dtViewLoaiHang.HeaderBgColor = System.Drawing.Color.Empty;
+            this.dtViewLoaiHang.HeaderBackColor = System.Drawing.Color.Empty;
             this.dtViewLoaiHang.HeaderForeColor = System.Drawing.Color.White;
             this.dtViewLoaiHang.Location = new System.Drawing.Point(19, 31);
             this.dtViewLoaiHang.Name = "dtViewLoaiHang";
