@@ -24,7 +24,6 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         {
             InitializeComponent();
             db = new QLHHDBDataContext();
-            db.Connection.ConnectionString = @"Data Source=Admin-PC;Initial Catalog=QLBanHangTapHoa;Integrated Security=True";
         }
 
         public void Render()

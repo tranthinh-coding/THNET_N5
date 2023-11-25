@@ -23,7 +23,6 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         {
             InitializeComponent();
             db = new QLHHDBDataContext();
-            db.Connection.ConnectionString = @"Data Source=Admin-PC;Initial Catalog=QLBanHangTapHoa;Integrated Security=True";
 
             var query = from x in db.LoaiHangs
                         select new
@@ -97,47 +96,73 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (
+                IsNil(txtMahang.Text) ||
+                IsNil(txtDonGia.Text) ||
+                IsNil(txtDVT.Text) ||
+                IsNil(txtTenHang.Text)
+            )
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ các trường");
+                return;
+            }
+
+            if (!IsNumeric(txtDonGia.Text))
+            {
+                MessageBox.Show("Vui lòng ko nhập chữ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             HangHoa hanghoa = new HangHoa();
             hanghoa.MaHang = txtMahang.Text;
             hanghoa.TenHang = txtTenHang.Text;
             hanghoa.LoaiHang = cbBLoaiHang.SelectedValue.ToString();
             hanghoa.DonViTinh = txtDVT.Text;
             hanghoa.DonGia = float.Parse(txtDonGia.Text);
-            if (txtMahang.Text != "" && txtTenHang.Text != "" && txtDVT.Text != "" && txtDonGia.Text != "")
+           
+            if (db.HangHoas.Any(hh => hh.MaHang == hanghoa.MaHang))
             {
-                if (IsNumeric(txtDonGia.Text) == false)
-                {
-                    MessageBox.Show("Vui lòng ko nhập chữ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    if (db.HangHoas.Any(hh => hh.MaHang == hanghoa.MaHang))
-                    {
-                        MessageBox.Show("Thêm thất bại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        db.HangHoas.InsertOnSubmit(hanghoa);
-                        db.SubmitChanges();
-                        Render();
-
-                        txtMahang.Clear();
-                        txtTenHang.Clear();
-                        txtDVT.Clear();
-                        txtDonGia.Clear();
-                        txtMahang.Focus();
-                    }
-                }
+                MessageBox.Show("Mã hàng này đã tồn tại.");
             }
             else
             {
-                MessageBox.Show("Vui lòng không để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                db.HangHoas.InsertOnSubmit(hanghoa);
+                db.SubmitChanges();
+                Render();
+
+                txtMahang.Clear();
+                txtTenHang.Clear();
+                txtDVT.Clear();
+                txtDonGia.Clear();
+                txtMahang.Focus();
             }
+        }
+
+        // null or empty
+        private bool IsNil(string x)
+        {
+            return String.IsNullOrEmpty(x);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            if (
+                IsNil(txtMahang.Text) ||
+                IsNil(txtDonGia.Text) ||
+                IsNil(txtDVT.Text) || 
+                IsNil(txtTenHang.Text)
+            ) {
+                MessageBox.Show("Vui lòng điền đầy đủ các trường");
+                return;
+            }
+            
+            if (!IsNumeric(txtDonGia.Text))
+            {
+                MessageBox.Show("Vui lòng ko nhập chữ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             int select = dtGridViewHangHoa.SelectedCells[0].RowIndex;
 
             HangHoa hanghoa = db.HangHoas.Single(hh => hh.MaHang == dtGridViewHangHoa.Rows[select].Cells["MaHang"].Value.ToString());
@@ -145,6 +170,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             if (hanghoa.MaHang != txtMahang.Text)
             {
                 MessageBox.Show("Không thể thay đổi mã hàng.");
+                return;
             }
 
             hanghoa.TenHang = txtTenHang.Text;
@@ -153,28 +179,13 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
       
             hanghoa.DonViTinh = txtDVT.Text;
             hanghoa.DonGia = float.Parse(txtDonGia.Text);
-                
-            if (txtMahang.Text != "" && txtTenHang.Text != "" && txtDVT.Text != "" && txtDonGia.Text != "")
-            {
-                if (IsNumeric(txtDonGia.Text) == false)
-                {
-                    MessageBox.Show("Vui lòng ko nhập chữ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    db.SubmitChanges();
-                    Render();
-                    txtMahang.Clear();
-                    txtTenHang.Clear();
-                    txtDVT.Clear();
-                    txtDonGia.Clear();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vui không để trống", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            
+
+            db.SubmitChanges();
+            Render();
+            txtMahang.Clear();
+            txtTenHang.Clear();
+            txtDVT.Clear();
+            txtDonGia.Clear();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -183,10 +194,6 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             string MaHang = dtGridViewHangHoa.Rows[select].Cells["MaHang"].Value.ToString();
 
             HangHoa hanghoa = db.HangHoas.Single(hh => hh.MaHang == MaHang);
-
-            // Xoa bo toan bo hoa don lien quan den mat hang
-            //var s = db.CT_HoaDons.Where(xxe => xxe.MaHang == MaHang);
-            //db.CT_HoaDons.DeleteAllOnSubmit(s);
 
             db.HangHoas.DeleteOnSubmit(hanghoa);
             db.SubmitChanges();
