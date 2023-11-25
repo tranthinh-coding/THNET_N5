@@ -246,9 +246,14 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             int dong = 5;
             for (int i = 0; i < dtGridViewHangHoa.Rows.Count; i++)
             {
-                //exSheet.Range["A" + (dong + i).ToString()].Value = dtViewLoaiHang.Rows[i].Cells["MaLoai"].Value.ToString();
-                //exSheet.Range["B"+ (dong + i).ToString() +":C" +(dong + i).ToString()].MergeCells = true;
-                //exSheet.Range["B" + (dong + i).ToString()].Value = dtViewLoaiHang.Rows[i].Cells["TenLoai"].Value.ToString();
+                exSheet.Range["A" + (dong + i).ToString()].Value = dtGridViewHangHoa.Rows[i].Cells["MaHang"].Value.ToString();
+                exSheet.Range["B" + (dong + i).ToString() + ":C" + (dong + i).ToString()].MergeCells = true;
+                exSheet.Range["B" + (dong + i).ToString()].Value = dtGridViewHangHoa.Rows[i].Cells["TenHang"].Value.ToString();
+                exSheet.Range["D" + (dong + i).ToString() + ":E" + (dong + i).ToString()].MergeCells = true;
+                exSheet.Range["D" + (dong + i).ToString()].Value = dtGridViewHangHoa.Rows[i].Cells["TenLoai"].Value.ToString();
+                exSheet.Range["F" + (dong + i).ToString() + ":G" + (dong + i).ToString()].MergeCells = true;
+                exSheet.Range["F" + (dong + i).ToString()].Value = dtGridViewHangHoa.Rows[i].Cells["DonViTinh"].Value.ToString();
+                exSheet.Range["H" + (dong + i).ToString()].Value = dtGridViewHangHoa.Rows[i].Cells["DonGia"].Value.ToString();
             }
 
             exSheet.Name = "QLHangHoa";
