@@ -12,9 +12,7 @@ using N5;
 using Org.BouncyCastle.Asn1.Crmf;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using TextBox = System.Windows.Forms.TextBox;
-using OfficeOpenXml;
-using System.IO;
-using ClosedXML.Excel;
+using ClosedXML.Excel; 
 
 namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
 {
@@ -28,11 +26,11 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         }
 
 
-        private void QLKhachHang_Load(object sender, EventArgs e)
+        private void LoadData()
         {
             try
             {
-                if (qlkhGv.Columns.Count > 0 )
+                if (qlkhGv.Columns.Count > 0)
                 {
                     qlkhGv.Columns.Clear();
                 }
@@ -51,7 +49,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                 qlkhGv.Columns[2].HeaderText = "Phường";
                 qlkhGv.Columns[3].HeaderText = "Quận";
                 qlkhGv.Columns[4].HeaderText = "Thành phố";
-               
+
                 // Tạo cột nút "Xóa"
                 DataGridViewButtonColumn deleteColumn = new DataGridViewButtonColumn();
                 deleteColumn.HeaderText = "Lựa chọn";
@@ -65,6 +63,11 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             {
                 return;
             }
+        }
+
+        private void QLKhachHang_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
 
         void resetError()
@@ -142,7 +145,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                     db.SubmitChanges();
                     resetTextBox();
                 }
-                QLKhachHang_Load(sender, e);
+                LoadData();
             }
             catch 
             {
@@ -169,7 +172,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                             db.SubmitChanges();
                     // Xóa dòng tương ứng từ DataGridView
                     //qlkhGv.Rows.RemoveAt(e.RowIndex);
-                    QLKhachHang_Load(sender, e);
+                    LoadData();
                     resetTextBox();
                     return;
                 }
@@ -285,16 +288,129 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
 
         }
 
+        private void hoverLabel(Label label)
+        {
+            label.ForeColor = ColorTranslator.FromHtml("25, 91, 255");
+            label.Font = new Font(export.Font, export.Font.Style | FontStyle.Underline);
+            label.Cursor = Cursors.Hand;
+        }
+        private void leaveLabel(Label label)
+        {
+            label.ForeColor = Color.DimGray;
+            label.Font = new Font(export.Font, export.Font.Style & ~FontStyle.Underline);
+        }
         private void export_MouseHover_1(object sender, EventArgs e)
         {
-            export.ForeColor = ColorTranslator.FromHtml("25, 91, 255");
-            export.Font = new Font(export.Font, export.Font.Style | FontStyle.Underline);
+            hoverLabel(export);
         }
 
         private void export_MouseLeave(object sender, EventArgs e)
         {
-            export.ForeColor = Color.DimGray;
-            export.Font = new Font(export.Font, export.Font.Style & ~FontStyle.Underline);
+            leaveLabel(export);
+        }
+
+        private void import_Click(object sender, EventArgs e)
+        {
+            // Tạo đối tượng OpenFileDialog
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
+            // Hiển thị hộp thoại mở tệp
+            openFileDialog.Title = "Chọn file nhập dữ liệu";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string filePath = openFileDialog.FileName;
+                    using (XLWorkbook workbook = new XLWorkbook(filePath))
+                    {
+                        IXLWorksheet worksheet = workbook.Worksheet(1);
+                        DataTable dt = new DataTable();
+                        bool firstRow = true;
+                        foreach (IXLRow row in worksheet.Rows())
+                        {
+                            //Kiểm tra nếu đã có hàng đầu tiên thì thêm luôn cột
+                            if (firstRow)
+                            {
+                                //Thêm cột vào datatable
+                                foreach (IXLCell cell in row.Cells())
+                                {
+                                    dt.Columns.Add(cell.Value.ToString());
+                                }
+                                firstRow = false;
+                            }
+                            else
+                            {
+                                //Nếu chưa có hàng nào thì tạo 
+                                DataRow newRow = dt.NewRow();
+                                foreach (IXLCell cell in row.Cells())
+                                {
+                                    newRow[cell.Address.ColumnNumber - 1] = cell.Value.ToString();
+                                }
+                                dt.Rows.Add(newRow);
+                            }
+                        }
+                       // qlkhGv.DataSource = dt;
+                        using (QLHHDBDataContext db = new QLHHDBDataContext())
+                        {
+                            try
+                            {
+                                // for -> insert -> lỗi -> bỏ qua, insert tiếp
+                                var dataRows = dt.AsEnumerable();
+                                List<string> mkhtontai = new List<string>();
+                                foreach (var item in dataRows)
+                                {
+                                    var khtontai = db.KhachHangs.Select(k => k.MaKH).ToList();
+                                    if (khtontai.Contains(item[0].ToString()))
+                                    {
+                                        mkhtontai.Add(item[0].ToString());
+                                    }
+                                    else
+                                    {
+                                        KhachHang x = new KhachHang();
+                                        x.MaKH = item[0].ToString();
+                                        x.TenKH = item[1].ToString();
+                                        x.DiaChi = item[2].ToString();
+                                        x.Quan = item[3].ToString();
+                                        x.ThanhPho = item[4].ToString();
+                                        db.KhachHangs.InsertOnSubmit(x);
+                                    } 
+                                }
+                                db.SubmitChanges();
+                                LoadData();
+                                MessageBox.Show("Nhập dữ liệu thành công!", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                if (mkhtontai.Count > 0)
+                                    MessageBox.Show("Những mã khách hàng sau đã tồn tại nên không thể nhập từ file: " + string.Join(",", mkhtontai), "Lưu ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            catch (Exception err)
+                            {
+                                // insert thất bại, gridView bị lỗi hiển thị
+                                // load lai table trước khi hiện thông báo
+                                LoadData(); 
+                                if (err.Message.Contains("The duplicate key value is"))
+                                {
+                                    string[] parts = err.Message.Split('.');
+
+                                    MessageBox.Show(parts[3]);
+                                }
+                            }
+
+                        }
+                    }
+                }catch(SqlException sqlex)
+                {
+                    MessageBox.Show(sqlex.ToString());
+                }
+            }
+        }
+
+        private void import_MouseHover(object sender, EventArgs e)
+        {
+            hoverLabel(import);
+        }
+
+        private void import_MouseLeave(object sender, EventArgs e)
+        {
+            leaveLabel(import);
         }
     }
     

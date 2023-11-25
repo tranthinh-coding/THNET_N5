@@ -184,6 +184,24 @@
     <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
     </Reference>
+	<Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=8.2.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>packages\MySql.Data.8.2.0\lib\net462\MySql.Data.dll</HintPath>
     </Reference>
@@ -309,6 +327,12 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="HangHoaStore.cs" />
+    <Compile Include="QLBanHangTapHoaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBanHangTapHoaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QLHangHoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,7 +365,39 @@
     <Compile Include="QLKhachHang.Designer.cs">
       <DependentUpon>QLKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Store.cs" />
+    <Compile Include="StoreBill.cs" />
+    <Compile Include="StoreInfomationBill.cs" />
+    <Compile Include="StoreSumMoney.cs" />
+    <Compile Include="StoreYear.cs" />
+    <Compile Include="ThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKe.Designer.cs">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKeHoaDon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThongKeHoaDon.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinHoaDon.Designer.cs">
+      <DependentUpon>ThongTinHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TongTien.cs" />
+    <Compile Include="ViewBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewBill.Designer.cs">
+      <DependentUpon>ViewBill.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BaoCaoBanHang.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -374,7 +430,68 @@
     <EmbeddedResource Include="QLKhachHang.resx">
       <DependentUpon>QLKhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe.resx">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKeHoaDon.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKeMatHang.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinHoaDon.rdlc" />
+    <EmbeddedResource Include="ThongTinHoaDon.resx">
+      <DependentUpon>ThongTinHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewBill.resx">
+      <DependentUpon>ViewBill.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Constants.datasource" />
+    <None Include="Properties\DataSources\CT_HoaDon.datasource" />
+    <None Include="Properties\DataSources\DangNhap.datasource" />
+    <None Include="Properties\DataSources\Dashboard.datasource" />
+    <None Include="Properties\DataSources\HangHoa.datasource" />
+    <None Include="Properties\DataSources\HangHoaStore.datasource" />
+    <None Include="Properties\DataSources\HoaDon.datasource" />
+    <None Include="Properties\DataSources\KhachHang.datasource" />
+    <None Include="Properties\DataSources\LoaiHang.datasource" />
+    <None Include="Properties\DataSources\NhanVien.datasource" />
+    <None Include="Properties\DataSources\QLBanHangTapHoaDataSet.datasource" />
+    <None Include="Properties\DataSources\QLBanHangTapHoaDataSet.HangHoaDataTable.datasource" />
+    <None Include="Properties\DataSources\QLBanHangTapHoaDataSet.HangHoaRow.datasource" />
+    <None Include="Properties\DataSources\QLBanHangTapHoaDataSet.HangHoaRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\QLBanHangTapHoaDataSet.HangHoaRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\QLBanHangTapHoaDataSet.LoaiHangDataTable.datasource" />
+    <None Include="Properties\DataSources\QLBanHangTapHoaDataSet.LoaiHangRow.datasource" />
+    <None Include="Properties\DataSources\QLBanHangTapHoaDataSet.LoaiHangRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\QLBanHangTapHoaDataSet.LoaiHangRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\QLHangHoa.datasource" />
+    <None Include="Properties\DataSources\QLHHDBDataContext.datasource" />
+    <None Include="Properties\DataSources\QLHoaDon.datasource" />
+    <None Include="Properties\DataSources\QLKhachHang.datasource" />
+    <None Include="Properties\DataSources\QLLoaiHang.datasource" />
+    <None Include="Properties\DataSources\Store.datasource" />
+    <None Include="Properties\DataSources\StoreBill.datasource" />
+    <None Include="Properties\DataSources\StoreInfomationBill1.datasource" />
+    <None Include="Properties\DataSources\StoreSumMoney.datasource" />
+    <None Include="Properties\DataSources\StoreYear.datasource" />
+    <None Include="Properties\DataSources\ThongKe.datasource" />
+    <None Include="Properties\DataSources\ThongKeHoaDon.CT_HoaDonDataTable.datasource" />
+    <None Include="Properties\DataSources\ThongKeHoaDon.CT_HoaDonRow.datasource" />
+    <None Include="Properties\DataSources\ThongKeHoaDon.CT_HoaDonRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\ThongKeHoaDon.CT_HoaDonRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\ThongKeHoaDon.datasource" />
+    <None Include="Properties\DataSources\ThongKeHoaDon.HoaDonDataTable.datasource" />
+    <None Include="Properties\DataSources\ThongKeHoaDon.HoaDonRow.datasource" />
+    <None Include="Properties\DataSources\ThongKeHoaDon.HoaDonRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\ThongKeHoaDon.HoaDonRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\ThongKeHoaDon.KhachHangDataTable.datasource" />
+    <None Include="Properties\DataSources\ThongKeHoaDon.KhachHangRow.datasource" />
+    <None Include="Properties\DataSources\ThongKeHoaDon.KhachHangRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\ThongKeHoaDon.KhachHangRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\ThongTinHoaDon.datasource" />
+    <None Include="Properties\DataSources\TongTien.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -384,6 +501,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLBanHangTapHoaDataSet.xsc">
+      <DependentUpon>QLBanHangTapHoaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLBanHangTapHoaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLBanHangTapHoaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLBanHangTapHoaDataSet.xss">
+      <DependentUpon>QLBanHangTapHoaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="QLHHDB.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>QLHHDB.designer.cs</LastGenOutput>
@@ -391,6 +519,17 @@
     </None>
     <None Include="QLHHDB.dbml.layout">
       <DependentUpon>QLHHDB.dbml</DependentUpon>
+    </None>
+    <None Include="ThongKeHoaDon.xsc">
+      <DependentUpon>ThongKeHoaDon.xsd</DependentUpon>
+    </None>
+    <None Include="ThongKeHoaDon.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ThongKeHoaDon.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ThongKeHoaDon.xss">
+      <DependentUpon>ThongKeHoaDon.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -419,6 +558,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\anh-backgroud-dep1.jpg" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
