@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Linq;
+using DocumentFormat.OpenXml.Office2010.PowerPoint;
 
 namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
 {
@@ -109,57 +110,52 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             }
         }
 
+        private string RandomID(string prefix = "")
+        {
+            Random random = new Random();
+
+            int number = random.Next(10000);
+
+            if (number < 10)
+            {
+                return prefix + "0000" + number;
+            }
+            if (number < 100)
+            {
+                return prefix + "000" + number;
+            }
+            if (number < 1000)
+            {
+                return prefix + "00" + number;
+            }
+            return prefix + number;
+        }
+
         private void bunifuButton2_Click(object sender, EventArgs e)
         {
             try
             {
+                if (table.Rows.Count < 1)
+                {
+                    MessageBox.Show("Chưa chọn sản phẩm");
+                    return;
+                }
+
                 DataTable tb = new DataTable();
                 tb = (DataTable)data.DataSource;
 
-                ThongTinHoaDon hoaDon = new ThongTinHoaDon();
-                hoaDon.dataTable = tb;
-                hoaDon.tongTienThanhToan = thanhTien.Text;
-
-                HoaDon tbHoaDon = new HoaDon();
-
+                HoaDon hoaDon = new HoaDon();
                 KhachHang kh = new KhachHang();
 
-                
-
-                Random random = new Random();
-
-                int number = random.Next(10000);
-
-                if (number < 10)
+                if (tab.SelectedTab == tabPage1)
                 {
-                    kh.MaKH = "KH0000" + number;
-                    tbHoaDon.SoHD = "HD0000" + number;
-                }
-                else if (number < 100 && number > 10)
+                    kh.MaKH = comboboxTen.SelectedValue.ToString();
+                    kh.TenKH = comboboxTen.Text;
+                } else
                 {
-                    kh.MaKH = "KH000" + number;
-                    tbHoaDon.SoHD = "HD000" + number;
-                }
-                else if (number < 1000 && number > 100)
-                {
-                    kh.MaKH = "KH00" + number;
-                    tbHoaDon.SoHD = "HD000" + number;
-                }
-                else
-                {
-                    kh.MaKH = "KH" + number;
-                    tbHoaDon.SoHD = "HD" + number;
-                }
-
-                if (tab.SelectedIndex == 0)
-                {
-                    hoaDon.tenKhach = comboboxTen.Text.ToString();
-                    
-                }
-                else
-                {
-                    hoaDon.tenKhach = tenKhach.Text;
-
+                    // Tao khach hang moi khi chon tabPage2
+                    string MaKH = RandomID("KH");
+                    kh.MaKH = MaKH;
                     kh.TenKH = tenKhach.Text;
                     kh.DiaChi = diaChi.Text;
                     kh.Quan = quan.Text;
@@ -168,26 +164,45 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                     db.SubmitChanges();
                 }
 
-                hoaDon.maHoaDon = tbHoaDon.SoHD;
-                hoaDon.ngay = date.Value;
+                hoaDon.SoHD = RandomID("HD");
+                hoaDon.NgayBan = date.Value;
+                hoaDon.MaKH = kh.MaKH;
+                hoaDon.MaNV = Store.User.MaNV;
 
-                
-
-                tbHoaDon.NgayBan = date.Value;
-                tbHoaDon.MaKH = comboboxTen.SelectedValue.ToString();
-                tbHoaDon.MaNV = "NV04";
-                db.HoaDons.InsertOnSubmit(tbHoaDon);
+                db.HoaDons.InsertOnSubmit(hoaDon);
                 db.SubmitChanges();
 
+                foreach (DataRow row in table.Rows)
+                {
+                    CT_HoaDon cT_HoaDon = new CT_HoaDon();
+                    int soLuong = int.Parse(row[3].ToString());
+                    int donGia = int.Parse(row[4].ToString());
+                    String tenHang = row[0].ToString();
+                    var rs = db.HangHoas.Where(h => h.TenHang == tenHang).Select(p => p.MaHang).ToList();
+                    if (rs.Any())
+                    {
+                        cT_HoaDon.MaHang = rs[0];
+                    }
+                    cT_HoaDon.SoHD = hoaDon.SoHD;
+                    cT_HoaDon.SoLuong = soLuong;
+                    cT_HoaDon.DonGia = donGia;
+
+                    db.CT_HoaDons.InsertOnSubmit(cT_HoaDon);
+                }
+                db.SubmitChanges();
                 MessageBox.Show("Thanh toán thành công!");
 
-                hoaDon.ShowDialog();
-                this.Close();
-                
+                ThongTinHoaDon formHoaDon = new ThongTinHoaDon();
+                formHoaDon.tenKhach = kh.TenKH;
+                formHoaDon.maHoaDon = hoaDon.SoHD;
+                formHoaDon.ngay = date.Value;
+                formHoaDon.dataTable = tb;
+                formHoaDon.tongTienThanhToan = thanhTien.Text;
+                formHoaDon.ShowDialog();
             }
-            catch
+            catch (Exception err)
             {
-                MessageBox.Show("Thanh toán thất bại vui lòng kiểm tra lại!");
+                MessageBox.Show("Thanh toán thất bại vui lòng kiểm tra lại!" + err.Message);
             }
         }
 
