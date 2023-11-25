@@ -1,8 +1,10 @@
-﻿using System;
+﻿using ExcelDataReader;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,13 +16,15 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
     public partial class QLHangHoa : Form
     {
         QLHHDBDataContext db;
+        DataTableCollection tableCollection;
         List<LoaiHang> listLoaiHang;
         
         public QLHangHoa()
         {
             InitializeComponent();
             db = new QLHHDBDataContext();
-        
+            db.Connection.ConnectionString = @"Data Source=Admin-PC;Initial Catalog=QLBanHangTapHoa;Integrated Security=True";
+
             var query = from x in db.LoaiHangs
                         select new
                         {
@@ -160,6 +164,10 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                 {
                     db.SubmitChanges();
                     Render();
+                    txtMahang.Clear();
+                    txtTenHang.Clear();
+                    txtDVT.Clear();
+                    txtDonGia.Clear();
                 }
             }
             else
@@ -214,20 +222,34 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             Excel.Range tenTruong = (Excel.Range)exSheet.Cells[1, 1];
 
             // Tiêu đề
-            exSheet.Range["B2:D2"].Font.Size = 24;
-            exSheet.Range["B2:D2"].MergeCells = true;
-            exSheet.Range["B2:D2"].Value = "DANH SÁCH HÀNG HÓA";
-            exSheet.Range["B2:D2"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
-            exSheet.Range["B2:D2"].Font.Bold = true;
+            exSheet.Range["B2:G2"].Font.Size = 24;
+            exSheet.Range["B2:G2"].MergeCells = true;
+            exSheet.Range["B2:G2"].Value = "DANH SÁCH HÀNG HÓA";
+            exSheet.Range["B2:G2"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            exSheet.Range["B2:G2"].Font.Bold = true;
 
             // Bảng danh sách hóa đơn
-            exSheet.Range["A4:E4"].Font.Size = 14;
-            exSheet.Range["A4:E4"].Font.Bold = true;
+            exSheet.Range["A4:H4"].Font.Size = 14;
+            exSheet.Range["A4:H4"].Font.Bold = true;
             exSheet.Range["A4"].Value = "Mã Hàng";
+            exSheet.Range["B4:C4"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            exSheet.Range["B4:C4"].MergeCells = true;
             exSheet.Range["B4"].Value = "Tên Hàng";
-            exSheet.Range["C4"].Value = "Loại Hàng";
-            exSheet.Range["D4"].Value = "Đơn Vị Tính";
-            exSheet.Range["E4"].Value = "Đơn Giá";
+            exSheet.Range["D4:E4"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            exSheet.Range["D4:E4"].MergeCells = true;
+            exSheet.Range["D4"].Value = "Tên Loại";
+            exSheet.Range["F4:G4"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            exSheet.Range["F4:G4"].MergeCells = true;
+            exSheet.Range["F4"].Value = "Đơn Vị Tính";
+            exSheet.Range["H4"].Value = "Đơn Giá";
+
+            int dong = 5;
+            for (int i = 0; i < dtGridViewHangHoa.Rows.Count; i++)
+            {
+                //exSheet.Range["A" + (dong + i).ToString()].Value = dtViewLoaiHang.Rows[i].Cells["MaLoai"].Value.ToString();
+                //exSheet.Range["B"+ (dong + i).ToString() +":C" +(dong + i).ToString()].MergeCells = true;
+                //exSheet.Range["B" + (dong + i).ToString()].Value = dtViewLoaiHang.Rows[i].Cells["TenLoai"].Value.ToString();
+            }
 
             exSheet.Name = "QLHangHoa";
             // File excel hoạt động
@@ -253,6 +275,31 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
 
         }
 
+        private void importExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using(OpenFileDialog openFileDialog = new OpenFileDialog() {})
+            {
+                if(openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using(var str = File.Open(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
+                    {
+                        using(IExcelDataReader reader = ExcelReaderFactory.CreateReader(str))
+                        {
+                            DataSet result = reader.AsDataSet(new ExcelDataSetConfiguration()
+                            {
+                                ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true}
+                            });
+                            tableCollection = result.Tables;
+                            foreach(DataTable table in tableCollection)
+                            {
+                                comboBox1.Items.Add(table.TableName);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         private void dtGridViewHangHoa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int select = dtGridViewHangHoa.SelectedCells[0].RowIndex;
@@ -267,6 +314,12 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             txtDVT.Text = dtGridViewHangHoa.Rows[select].Cells["DonViTinh"].Value.ToString();
             txtDonGia.Text = dtGridViewHangHoa.Rows[select].Cells["DonGia"].Value.ToString();
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataTable dt = tableCollection[comboBox1.SelectedItem.ToString()];
+            dtGridViewHangHoa.DataSource = dt;
         }
     }
 }

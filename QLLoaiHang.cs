@@ -1,9 +1,10 @@
-﻿using Microsoft.Office.Interop.Excel;
+﻿using ExcelDataReader;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
     public partial class QLLoaiHang : Form
     {
         QLHHDBDataContext db;
+        DataTableCollection tableCollection;
         int CurrRowSelect = -1;
       
 
@@ -193,14 +195,13 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             // Tiêu đề
             exSheet.Range["A2:D2"].Font.Size = 18;
             exSheet.Range["A2:D2"].MergeCells = true;
-            exSheet.Range["A2:D2"].Value = "DANH SÁCH LOẠI HÀNG";
-            exSheet.Range["A2:D2"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             exSheet.Range["A2:D2"].Font.Bold = true;
+            exSheet.Range["A2:D2"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            exSheet.Range["A2:D2"].Value = "DANH SÁCH LOẠI HÀNG";
 
             // Bảng danh sách hóa đơn
             exSheet.Range["A4:D4"].Font.Size = 14;
             exSheet.Range["A4:D4"].Font.Bold = true;
-            exSheet.Range["A2:D2"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             exSheet.Range["A4"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             exSheet.Range["A4"].Value = "Mã Loại";
             exSheet.Range["B4:C4"].MergeCells = true;
@@ -251,6 +252,37 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                 txtMaLoai.Text = dtViewLoaiHang.Rows[CurrRowSelect].Cells["MaLoai"].Value.ToString();
                 txtLoaiHang.Text = dtViewLoaiHang.Rows[CurrRowSelect].Cells["TenLoai"].Value.ToString();
             }
+        }
+
+        private void importExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog() { })
+            {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (var str = File.Open(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
+                    {
+                        using (IExcelDataReader reader = ExcelReaderFactory.CreateReader(str))
+                        {
+                            DataSet result = reader.AsDataSet(new ExcelDataSetConfiguration()
+                            {
+                                ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true }
+                            });
+                            tableCollection = result.Tables;
+                            foreach (DataTable table in tableCollection)
+                            {
+                                comboBox1.Items.Add(table.TableName);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataTable dt = tableCollection[comboBox1.SelectedItem.ToString()];
+            dtViewLoaiHang.DataSource = dt;
         }
     }
 }
