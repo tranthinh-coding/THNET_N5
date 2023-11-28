@@ -33,7 +33,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         {
             Store.User = null;
 
-            this.Hide();
+            this.Close();
             (new DangNhap()).Show();
         }
 
@@ -53,11 +53,13 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         }
         private void qlhd_Click(object sender, EventArgs e)
         {
+            if (formHoaDon == null)
+                formHoaDon = new QLHoaDon();
+            if (currentFormOpen == formHoaDon) return;
+
             resetButtonColor();
             currentFormOpen?.Hide();
             hoaDonBtn.IdleFillColor = buttonActiveColor;
-
-            formHoaDon = new QLHoaDon();
 
             setForm(formHoaDon);
 
@@ -65,48 +67,50 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
 
         private void qltk_Click(object sender, EventArgs e)
         {
+            if (formThongKe == null)
+                formThongKe = new ThongKe();
+            if (currentFormOpen == formThongKe) return;
             resetButtonColor();
             currentFormOpen?.Hide();
             thongKeBtn.IdleFillColor = buttonActiveColor;
-
-            formThongKe = new ThongKe();
 
             setForm(formThongKe);
         }
 
         private void qlkh_Click(object sender, EventArgs e)
         {
+            if (formKhachHang == null)
+                formKhachHang = new QLKhachHang();
+            if (currentFormOpen == formKhachHang) return;
             resetButtonColor();
             currentFormOpen?.Hide();
-
             qlkhBtn.IdleFillColor = buttonActiveColor;
-
-            formKhachHang = new QLKhachHang();
 
             setForm(formKhachHang);
         }
 
         private void qlhh_Click(object sender, EventArgs e)
         {
+            if (formHangHoa == null)
+                formHangHoa = new QLHangHoa();
+            if (currentFormOpen == formHangHoa) return;
             resetButtonColor();
             currentFormOpen?.Hide();
-
             hangHoaBtn.IdleFillColor = buttonActiveColor;
-
-            formHangHoa = new QLHangHoa();
 
             setForm(formHangHoa);
         }
 
         private void qllh_Click(object sender, EventArgs e)
         {
-            //currentFormOpen?.Close();
+            if (formLoaiHang == null)
+                formLoaiHang = new QLLoaiHang();
+
+            if (currentFormOpen == formLoaiHang) return;
+
             resetButtonColor();
             currentFormOpen?.Hide();
-
             loaiHangBtn.IdleFillColor = buttonActiveColor;
-
-            formLoaiHang = new QLLoaiHang();
 
             setForm(formLoaiHang);
         }

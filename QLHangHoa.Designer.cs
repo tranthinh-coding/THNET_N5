@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QLHangHoa));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,21 +41,19 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QLHangHoa));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnReset = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.cbBLoaiHang = new System.Windows.Forms.ComboBox();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.txtDVT = new System.Windows.Forms.TextBox();
             this.txtTenHang = new System.Windows.Forms.TextBox();
-            this.txtMahang = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dtGridViewHangHoa = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.btnDelete = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnEdit = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -64,8 +64,7 @@
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnReset = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.txtMaHang = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewHangHoa)).BeginInit();
@@ -76,76 +75,165 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(157, 77);
+            this.label1.Location = new System.Drawing.Point(140, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(479, 51);
+            this.label1.Size = new System.Drawing.Size(404, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "QUẢN LÝ HÀNG HÓA";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtMaHang);
             this.groupBox1.Controls.Add(this.btnReset);
             this.groupBox1.Controls.Add(this.cbBLoaiHang);
             this.groupBox1.Controls.Add(this.txtDonGia);
             this.groupBox1.Controls.Add(this.txtDVT);
             this.groupBox1.Controls.Add(this.txtTenHang);
-            this.groupBox1.Controls.Add(this.txtMahang);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(33, 143);
+            this.groupBox1.Location = new System.Drawing.Point(29, 114);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(475, 504);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(422, 403);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhập thông tin";
             // 
+            // btnReset
+            // 
+            this.btnReset.AllowAnimations = false;
+            this.btnReset.AllowMouseEffects = true;
+            this.btnReset.AllowToggling = false;
+            this.btnReset.AnimationSpeed = 200;
+            this.btnReset.AutoGenerateColors = false;
+            this.btnReset.AutoRoundBorders = false;
+            this.btnReset.AutoSizeLeftIcon = true;
+            this.btnReset.AutoSizeRightIcon = true;
+            this.btnReset.BackColor = System.Drawing.Color.Transparent;
+            this.btnReset.BackColor1 = System.Drawing.Color.Silver;
+            this.btnReset.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReset.BackgroundImage")));
+            this.btnReset.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnReset.ButtonText = "RESET";
+            this.btnReset.ButtonTextMarginLeft = 0;
+            this.btnReset.ColorContrastOnClick = 45;
+            this.btnReset.ColorContrastOnHover = 45;
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnReset.CustomizableEdges = borderEdges1;
+            this.btnReset.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnReset.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnReset.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnReset.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnReset.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnReset.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnReset.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReset.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnReset.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnReset.IconMarginLeft = 11;
+            this.btnReset.IconPadding = 10;
+            this.btnReset.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReset.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnReset.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnReset.IconSize = 25;
+            this.btnReset.IdleBorderColor = System.Drawing.Color.Black;
+            this.btnReset.IdleBorderRadius = 24;
+            this.btnReset.IdleBorderThickness = 1;
+            this.btnReset.IdleFillColor = System.Drawing.Color.Silver;
+            this.btnReset.IdleIconLeftImage = null;
+            this.btnReset.IdleIconRightImage = null;
+            this.btnReset.IndicateFocus = false;
+            this.btnReset.Location = new System.Drawing.Point(141, 351);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnReset.OnDisabledState.BorderRadius = 24;
+            this.btnReset.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnReset.OnDisabledState.BorderThickness = 1;
+            this.btnReset.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnReset.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnReset.OnDisabledState.IconLeftImage = null;
+            this.btnReset.OnDisabledState.IconRightImage = null;
+            this.btnReset.onHoverState.BorderColor = System.Drawing.Color.Gray;
+            this.btnReset.onHoverState.BorderRadius = 24;
+            this.btnReset.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnReset.onHoverState.BorderThickness = 1;
+            this.btnReset.onHoverState.FillColor = System.Drawing.Color.Gray;
+            this.btnReset.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnReset.onHoverState.IconLeftImage = null;
+            this.btnReset.onHoverState.IconRightImage = null;
+            this.btnReset.OnIdleState.BorderColor = System.Drawing.Color.Black;
+            this.btnReset.OnIdleState.BorderRadius = 24;
+            this.btnReset.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnReset.OnIdleState.BorderThickness = 1;
+            this.btnReset.OnIdleState.FillColor = System.Drawing.Color.Silver;
+            this.btnReset.OnIdleState.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnReset.OnIdleState.IconLeftImage = null;
+            this.btnReset.OnIdleState.IconRightImage = null;
+            this.btnReset.OnPressedState.BorderColor = System.Drawing.Color.Black;
+            this.btnReset.OnPressedState.BorderRadius = 24;
+            this.btnReset.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnReset.OnPressedState.BorderThickness = 1;
+            this.btnReset.OnPressedState.FillColor = System.Drawing.Color.Silver;
+            this.btnReset.OnPressedState.ForeColor = System.Drawing.Color.Black;
+            this.btnReset.OnPressedState.IconLeftImage = null;
+            this.btnReset.OnPressedState.IconRightImage = null;
+            this.btnReset.Size = new System.Drawing.Size(107, 33);
+            this.btnReset.TabIndex = 15;
+            this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnReset.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnReset.TextMarginLeft = 0;
+            this.btnReset.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnReset.UseDefaultRadiusAndThickness = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // cbBLoaiHang
             // 
             this.cbBLoaiHang.FormattingEnabled = true;
-            this.cbBLoaiHang.Location = new System.Drawing.Point(218, 213);
+            this.cbBLoaiHang.Location = new System.Drawing.Point(194, 170);
+            this.cbBLoaiHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbBLoaiHang.Name = "cbBLoaiHang";
-            this.cbBLoaiHang.Size = new System.Drawing.Size(211, 41);
+            this.cbBLoaiHang.Size = new System.Drawing.Size(188, 34);
             this.cbBLoaiHang.TabIndex = 10;
             // 
             // txtDonGia
             // 
-            this.txtDonGia.Location = new System.Drawing.Point(218, 366);
+            this.txtDonGia.Location = new System.Drawing.Point(194, 293);
+            this.txtDonGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(211, 40);
+            this.txtDonGia.Size = new System.Drawing.Size(188, 34);
             this.txtDonGia.TabIndex = 9;
             // 
             // txtDVT
             // 
-            this.txtDVT.Location = new System.Drawing.Point(218, 283);
+            this.txtDVT.Location = new System.Drawing.Point(194, 226);
+            this.txtDVT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDVT.Name = "txtDVT";
-            this.txtDVT.Size = new System.Drawing.Size(211, 40);
+            this.txtDVT.Size = new System.Drawing.Size(188, 34);
             this.txtDVT.TabIndex = 8;
             // 
             // txtTenHang
             // 
-            this.txtTenHang.Location = new System.Drawing.Point(218, 136);
+            this.txtTenHang.Location = new System.Drawing.Point(194, 109);
+            this.txtTenHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenHang.Name = "txtTenHang";
-            this.txtTenHang.Size = new System.Drawing.Size(211, 40);
+            this.txtTenHang.Size = new System.Drawing.Size(188, 34);
             this.txtTenHang.TabIndex = 7;
-            // 
-            // txtMahang
-            // 
-            this.txtMahang.Location = new System.Drawing.Point(218, 63);
-            this.txtMahang.Name = "txtMahang";
-            this.txtMahang.Size = new System.Drawing.Size(211, 40);
-            this.txtMahang.TabIndex = 5;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(71, 379);
+            this.label6.Location = new System.Drawing.Point(63, 303);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 27);
+            this.label6.Size = new System.Drawing.Size(73, 22);
             this.label6.TabIndex = 4;
             this.label6.Text = "Đơn giá";
             // 
@@ -153,9 +241,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(38, 305);
+            this.label5.Location = new System.Drawing.Point(34, 244);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 27);
+            this.label5.Size = new System.Drawing.Size(99, 22);
             this.label5.TabIndex = 3;
             this.label5.Text = "Đơn vị tính";
             // 
@@ -163,9 +251,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(58, 149);
+            this.label4.Location = new System.Drawing.Point(52, 119);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 27);
+            this.label4.Size = new System.Drawing.Size(81, 22);
             this.label4.TabIndex = 2;
             this.label4.Text = "Tên hàng";
             // 
@@ -173,33 +261,35 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(58, 227);
+            this.label3.Location = new System.Drawing.Point(52, 182);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 27);
+            this.label3.Size = new System.Drawing.Size(87, 22);
             this.label3.TabIndex = 1;
             this.label3.Text = "Loại hàng";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(63, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 27);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Mã hàng";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.dtGridViewHangHoa);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(514, 143);
+            this.groupBox2.Location = new System.Drawing.Point(457, 114);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(754, 440);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(670, 352);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hiển thị";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(540, -12);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(131, 34);
+            this.comboBox1.TabIndex = 19;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // dtGridViewHangHoa
             // 
@@ -252,13 +342,14 @@
             this.dtGridViewHangHoa.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.dtGridViewHangHoa.HeaderBgColor = System.Drawing.Color.Empty;
             this.dtGridViewHangHoa.HeaderForeColor = System.Drawing.Color.White;
-            this.dtGridViewHangHoa.Location = new System.Drawing.Point(17, 39);
+            this.dtGridViewHangHoa.Location = new System.Drawing.Point(15, 31);
+            this.dtGridViewHangHoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtGridViewHangHoa.Name = "dtGridViewHangHoa";
             this.dtGridViewHangHoa.RowHeadersVisible = false;
             this.dtGridViewHangHoa.RowHeadersWidth = 62;
             this.dtGridViewHangHoa.RowTemplate.Height = 40;
             this.dtGridViewHangHoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtGridViewHangHoa.Size = new System.Drawing.Size(731, 395);
+            this.dtGridViewHangHoa.Size = new System.Drawing.Size(650, 316);
             this.dtGridViewHangHoa.TabIndex = 0;
             this.dtGridViewHangHoa.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.dtGridViewHangHoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridViewHangHoa_CellClick);
@@ -310,7 +401,8 @@
             this.btnDelete.IdleIconLeftImage = null;
             this.btnDelete.IdleIconRightImage = null;
             this.btnDelete.IndicateFocus = false;
-            this.btnDelete.Location = new System.Drawing.Point(1148, 606);
+            this.btnDelete.Location = new System.Drawing.Point(1020, 485);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDelete.OnDisabledState.BorderRadius = 24;
@@ -344,7 +436,7 @@
             this.btnDelete.OnPressedState.ForeColor = System.Drawing.Color.Black;
             this.btnDelete.OnPressedState.IconLeftImage = null;
             this.btnDelete.OnPressedState.IconRightImage = null;
-            this.btnDelete.Size = new System.Drawing.Size(120, 41);
+            this.btnDelete.Size = new System.Drawing.Size(107, 33);
             this.btnDelete.TabIndex = 16;
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDelete.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -400,7 +492,8 @@
             this.btnEdit.IdleIconLeftImage = null;
             this.btnEdit.IdleIconRightImage = null;
             this.btnEdit.IndicateFocus = false;
-            this.btnEdit.Location = new System.Drawing.Point(948, 606);
+            this.btnEdit.Location = new System.Drawing.Point(843, 485);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnEdit.OnDisabledState.BorderRadius = 24;
@@ -434,7 +527,7 @@
             this.btnEdit.OnPressedState.ForeColor = System.Drawing.Color.Black;
             this.btnEdit.OnPressedState.IconLeftImage = null;
             this.btnEdit.OnPressedState.IconRightImage = null;
-            this.btnEdit.Size = new System.Drawing.Size(120, 41);
+            this.btnEdit.Size = new System.Drawing.Size(107, 33);
             this.btnEdit.TabIndex = 15;
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnEdit.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -490,7 +583,8 @@
             this.btnAdd.IdleIconLeftImage = null;
             this.btnAdd.IdleIconRightImage = null;
             this.btnAdd.IndicateFocus = false;
-            this.btnAdd.Location = new System.Drawing.Point(741, 606);
+            this.btnAdd.Location = new System.Drawing.Point(659, 485);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAdd.OnDisabledState.BorderRadius = 24;
@@ -524,7 +618,7 @@
             this.btnAdd.OnPressedState.ForeColor = System.Drawing.Color.Black;
             this.btnAdd.OnPressedState.IconLeftImage = null;
             this.btnAdd.OnPressedState.IconRightImage = null;
-            this.btnAdd.Size = new System.Drawing.Size(120, 41);
+            this.btnAdd.Size = new System.Drawing.Size(107, 33);
             this.btnAdd.TabIndex = 14;
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAdd.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -580,7 +674,8 @@
             this.btnRender.IdleIconLeftImage = null;
             this.btnRender.IdleIconRightImage = null;
             this.btnRender.IndicateFocus = false;
-            this.btnRender.Location = new System.Drawing.Point(531, 606);
+            this.btnRender.Location = new System.Drawing.Point(472, 485);
+            this.btnRender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRender.Name = "btnRender";
             this.btnRender.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnRender.OnDisabledState.BorderRadius = 24;
@@ -614,7 +709,7 @@
             this.btnRender.OnPressedState.ForeColor = System.Drawing.Color.Black;
             this.btnRender.OnPressedState.IconLeftImage = null;
             this.btnRender.OnPressedState.IconRightImage = null;
-            this.btnRender.Size = new System.Drawing.Size(120, 41);
+            this.btnRender.Size = new System.Drawing.Size(107, 33);
             this.btnRender.TabIndex = 13;
             this.btnRender.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnRender.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -650,7 +745,8 @@
             this.txtSearch.IconRight = null;
             this.txtSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.Lines = new string[0];
-            this.txtSearch.Location = new System.Drawing.Point(880, 77);
+            this.txtSearch.Location = new System.Drawing.Point(782, 62);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.MaxLength = 32767;
             this.txtSearch.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtSearch.Modified = false;
@@ -676,7 +772,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtSearch.OnIdleState = stateProperties4;
-            this.txtSearch.Padding = new System.Windows.Forms.Padding(3);
+            this.txtSearch.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtSearch.PlaceholderText = "Search...";
@@ -686,7 +782,7 @@
             this.txtSearch.SelectionLength = 0;
             this.txtSearch.SelectionStart = 0;
             this.txtSearch.ShortcutsEnabled = true;
-            this.txtSearch.Size = new System.Drawing.Size(388, 45);
+            this.txtSearch.Size = new System.Drawing.Size(345, 36);
             this.txtSearch.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtSearch.TabIndex = 17;
             this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -700,13 +796,13 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1313, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1167, 28);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -716,14 +812,14 @@
             this.exportExcelToolStripMenuItem,
             this.importExcelToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(73, 29);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
             // exportExcelToolStripMenuItem
             // 
             this.exportExcelToolStripMenuItem.Name = "exportExcelToolStripMenuItem";
             this.exportExcelToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.exportExcelToolStripMenuItem.Size = new System.Drawing.Size(277, 34);
+            this.exportExcelToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
             this.exportExcelToolStripMenuItem.Text = "Export Excel";
             this.exportExcelToolStripMenuItem.Click += new System.EventHandler(this.exportExcelToolStripMenuItem_Click);
             // 
@@ -731,115 +827,24 @@
             // 
             this.importExcelToolStripMenuItem.Name = "importExcelToolStripMenuItem";
             this.importExcelToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.importExcelToolStripMenuItem.Size = new System.Drawing.Size(277, 34);
+            this.importExcelToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
             this.importExcelToolStripMenuItem.Text = "Import Excel";
             this.importExcelToolStripMenuItem.Click += new System.EventHandler(this.importExcelToolStripMenuItem_Click);
             // 
-            // comboBox1
+            // txtMaHang
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(607, -15);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(147, 41);
-            this.comboBox1.TabIndex = 19;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // btnReset
-            // 
-            this.btnReset.AllowAnimations = false;
-            this.btnReset.AllowMouseEffects = true;
-            this.btnReset.AllowToggling = false;
-            this.btnReset.AnimationSpeed = 200;
-            this.btnReset.AutoGenerateColors = false;
-            this.btnReset.AutoRoundBorders = false;
-            this.btnReset.AutoSizeLeftIcon = true;
-            this.btnReset.AutoSizeRightIcon = true;
-            this.btnReset.BackColor = System.Drawing.Color.Transparent;
-            this.btnReset.BackColor1 = System.Drawing.Color.Silver;
-            this.btnReset.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReset.BackgroundImage")));
-            this.btnReset.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnReset.ButtonText = "RESET";
-            this.btnReset.ButtonTextMarginLeft = 0;
-            this.btnReset.ColorContrastOnClick = 45;
-            this.btnReset.ColorContrastOnHover = 45;
-            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnReset.CustomizableEdges = borderEdges1;
-            this.btnReset.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnReset.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnReset.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnReset.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnReset.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnReset.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnReset.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnReset.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnReset.IconMarginLeft = 11;
-            this.btnReset.IconPadding = 10;
-            this.btnReset.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReset.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnReset.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnReset.IconSize = 25;
-            this.btnReset.IdleBorderColor = System.Drawing.Color.Black;
-            this.btnReset.IdleBorderRadius = 24;
-            this.btnReset.IdleBorderThickness = 1;
-            this.btnReset.IdleFillColor = System.Drawing.Color.Silver;
-            this.btnReset.IdleIconLeftImage = null;
-            this.btnReset.IdleIconRightImage = null;
-            this.btnReset.IndicateFocus = false;
-            this.btnReset.Location = new System.Drawing.Point(159, 439);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnReset.OnDisabledState.BorderRadius = 24;
-            this.btnReset.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnReset.OnDisabledState.BorderThickness = 1;
-            this.btnReset.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnReset.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnReset.OnDisabledState.IconLeftImage = null;
-            this.btnReset.OnDisabledState.IconRightImage = null;
-            this.btnReset.onHoverState.BorderColor = System.Drawing.Color.Gray;
-            this.btnReset.onHoverState.BorderRadius = 24;
-            this.btnReset.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnReset.onHoverState.BorderThickness = 1;
-            this.btnReset.onHoverState.FillColor = System.Drawing.Color.Gray;
-            this.btnReset.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnReset.onHoverState.IconLeftImage = null;
-            this.btnReset.onHoverState.IconRightImage = null;
-            this.btnReset.OnIdleState.BorderColor = System.Drawing.Color.Black;
-            this.btnReset.OnIdleState.BorderRadius = 24;
-            this.btnReset.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnReset.OnIdleState.BorderThickness = 1;
-            this.btnReset.OnIdleState.FillColor = System.Drawing.Color.Silver;
-            this.btnReset.OnIdleState.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnReset.OnIdleState.IconLeftImage = null;
-            this.btnReset.OnIdleState.IconRightImage = null;
-            this.btnReset.OnPressedState.BorderColor = System.Drawing.Color.Black;
-            this.btnReset.OnPressedState.BorderRadius = 24;
-            this.btnReset.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnReset.OnPressedState.BorderThickness = 1;
-            this.btnReset.OnPressedState.FillColor = System.Drawing.Color.Silver;
-            this.btnReset.OnPressedState.ForeColor = System.Drawing.Color.Black;
-            this.btnReset.OnPressedState.IconLeftImage = null;
-            this.btnReset.OnPressedState.IconRightImage = null;
-            this.btnReset.Size = new System.Drawing.Size(120, 41);
-            this.btnReset.TabIndex = 15;
-            this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnReset.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnReset.TextMarginLeft = 0;
-            this.btnReset.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnReset.UseDefaultRadiusAndThickness = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.txtMaHang.AutoSize = true;
+            this.txtMaHang.Location = new System.Drawing.Point(189, 44);
+            this.txtMaHang.Name = "txtMaHang";
+            this.txtMaHang.Size = new System.Drawing.Size(0, 27);
+            this.txtMaHang.TabIndex = 16;
             // 
             // QLHangHoa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1313, 674);
+            this.ClientSize = new System.Drawing.Size(1167, 539);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
@@ -851,7 +856,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "QLHangHoa";
             this.Text = "FormHangHoa";
             this.Load += new System.EventHandler(this.QLHangHoa_Load);
@@ -871,7 +876,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -880,7 +884,6 @@
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.TextBox txtDVT;
         private System.Windows.Forms.TextBox txtTenHang;
-        private System.Windows.Forms.TextBox txtMahang;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDelete;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnEdit;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAdd;
@@ -893,5 +896,6 @@
         private System.Windows.Forms.ToolStripMenuItem importExcelToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboBox1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnReset;
+        private System.Windows.Forms.Label txtMaHang;
     }
 }

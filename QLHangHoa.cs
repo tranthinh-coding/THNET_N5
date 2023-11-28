@@ -48,7 +48,6 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             btnAdd.Enabled = false;
             btnDelete.Enabled = false;
             btnEdit.Enabled = false;
-            txtMahang.Enabled = false;
             txtTenHang.Enabled = false;
             cbBLoaiHang.Enabled = false;
             txtDVT.Enabled = false;
@@ -80,7 +79,6 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             btnAdd.Enabled = true;
             btnDelete.Enabled = true;
             btnEdit.Enabled = true;
-            txtMahang.Enabled = true;
             txtTenHang.Enabled = true;
             cbBLoaiHang.Enabled = true;
             txtDVT.Enabled = true;
@@ -97,7 +95,6 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (
-                IsNil(txtMahang.Text) ||
                 IsNil(txtDonGia.Text) ||
                 IsNil(txtDVT.Text) ||
                 IsNil(txtTenHang.Text)
@@ -114,7 +111,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             }
 
             HangHoa hanghoa = new HangHoa();
-            hanghoa.MaHang = txtMahang.Text;
+            hanghoa.MaHang = Utils.RandomID("HH");
             hanghoa.TenHang = txtTenHang.Text;
             hanghoa.LoaiHang = cbBLoaiHang.SelectedValue.ToString();
             hanghoa.DonViTinh = txtDVT.Text;
@@ -131,11 +128,10 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                 db.SubmitChanges();
                 Render();
 
-                txtMahang.Clear();
                 txtTenHang.Clear();
                 txtDVT.Clear();
                 txtDonGia.Clear();
-                txtMahang.Focus();
+                txtTenHang.Focus();
             }
         }
 
@@ -148,7 +144,6 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (
-                IsNil(txtMahang.Text) ||
                 IsNil(txtDonGia.Text) ||
                 IsNil(txtDVT.Text) || 
                 IsNil(txtTenHang.Text)
@@ -164,10 +159,10 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             }
 
             int select = dtGridViewHangHoa.SelectedCells[0].RowIndex;
+            string MaHang = dtGridViewHangHoa.Rows[select].Cells["MaHang"].Value.ToString();
+            HangHoa hanghoa = db.HangHoas.Single(hh => hh.MaHang == MaHang);
 
-            HangHoa hanghoa = db.HangHoas.Single(hh => hh.MaHang == dtGridViewHangHoa.Rows[select].Cells["MaHang"].Value.ToString());
-
-            if (hanghoa.MaHang != txtMahang.Text)
+            if (hanghoa.MaHang != MaHang)
             {
                 MessageBox.Show("Không thể thay đổi mã hàng.");
                 return;
@@ -182,10 +177,11 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
 
             db.SubmitChanges();
             Render();
-            txtMahang.Clear();
+            txtMaHang.Text = "";
             txtTenHang.Clear();
             txtDVT.Clear();
             txtDonGia.Clear();
+            txtTenHang.Focus();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -199,22 +195,22 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             db.SubmitChanges();
 
             Render();
-
-            txtMahang.Clear();
+            txtMaHang.Text = "";
             txtTenHang.Clear();
             txtDVT.Clear();
             txtDonGia.Clear();
-            txtMahang.Focus();
+            txtTenHang.Focus();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             var search = db.HangHoas.Where(hh => hh.MaHang.Contains(txtSearch.Text) || hh.TenHang.Contains(txtSearch.Text)).Select(hh => new { hh.MaHang, hh.TenHang, hh.LoaiHang, hh.DonViTinh, hh.DonGia });
             dtGridViewHangHoa.DataSource = search;
-            txtMahang.Clear();
+            txtMaHang.Text = "";
             txtTenHang.Clear();
             txtDVT.Clear();
             txtDonGia.Clear();
+            txtTenHang.Focus();
         }
 
         private void exportExcelToolStripMenuItem_Click(object sender, EventArgs e)
@@ -316,7 +312,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         {
             int select = dtGridViewHangHoa.SelectedCells[0].RowIndex;
 
-            txtMahang.Text = dtGridViewHangHoa.Rows[select].Cells["MaHang"].Value.ToString();
+            txtMaHang.Text = dtGridViewHangHoa.Rows[select].Cells["MaHang"].Value.ToString();
             txtTenHang.Text = dtGridViewHangHoa.Rows[select].Cells["TenHang"].Value.ToString();
             
             string TenLoai = dtGridViewHangHoa.Rows[select].Cells["TenLoai"].Value.ToString();
@@ -336,15 +332,14 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtMahang.Clear();
+            txtMaHang.Text = "";
             txtTenHang.Clear();
             txtDVT.Clear();
             txtDonGia.Clear();
-            txtMahang.Enabled = true;
             txtTenHang.Enabled = true;
             txtDVT.Enabled = true;
             txtDonGia.Enabled = true;
-            txtMahang.Focus();
+            txtTenHang.Focus();
         }
     }
 }
