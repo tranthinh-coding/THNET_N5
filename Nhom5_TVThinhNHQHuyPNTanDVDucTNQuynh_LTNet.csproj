@@ -388,6 +388,12 @@
     <Compile Include="ThongTinHoaDon.Designer.cs">
       <DependentUpon>ThongTinHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThongTinNhom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinNhom.Designer.cs">
+      <DependentUpon>ThongTinNhom.cs</DependentUpon>
+    </Compile>
     <Compile Include="TongTien.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="ViewBill.cs">
@@ -443,6 +449,9 @@
     <EmbeddedResource Include="ThongTinHoaDon.rdlc" />
     <EmbeddedResource Include="ThongTinHoaDon.resx">
       <DependentUpon>ThongTinHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinNhom.resx">
+      <DependentUpon>ThongTinNhom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewBill.resx">
       <DependentUpon>ViewBill.cs</DependentUpon>

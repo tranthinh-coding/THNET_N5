@@ -20,6 +20,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         QLLoaiHang formLoaiHang = null;
         QLHoaDon formHoaDon = null;
         ThongKe formThongKe = null;
+        ThongTinNhom formThongTinNhom = null;
 
         Form currentFormOpen = null;
 
@@ -125,6 +126,18 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             currentFormOpen.Dock = DockStyle.Fill;
 
             currentFormOpen.Show();
+        }
+
+        private void thongTinNhom_Click(object sender, EventArgs e)
+        {
+            if (formThongTinNhom == null)
+                formThongTinNhom = new ThongTinNhom();
+            if (currentFormOpen == formThongTinNhom) return;
+            resetButtonColor();
+            currentFormOpen?.Hide();
+            qlkhBtn.IdleFillColor = buttonActiveColor;
+
+            setForm(formThongTinNhom);
         }
     }
 }
