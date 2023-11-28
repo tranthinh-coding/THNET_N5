@@ -61,9 +61,10 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 22.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(310, 9);
+            this.label1.Location = new System.Drawing.Point(232, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(367, 51);
+            this.label1.Size = new System.Drawing.Size(290, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông tin hóa đơn";
             // 
@@ -71,9 +72,10 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 100);
+            this.label2.Location = new System.Drawing.Point(45, 81);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 32);
+            this.label2.Size = new System.Drawing.Size(115, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Số hóa đơn:";
             // 
@@ -81,9 +83,10 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(60, 161);
+            this.label3.Location = new System.Drawing.Point(45, 131);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 32);
+            this.label3.Size = new System.Drawing.Size(118, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Khách hàng:";
             // 
@@ -91,9 +94,10 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(60, 228);
+            this.label4.Location = new System.Drawing.Point(45, 185);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(180, 32);
+            this.label4.Size = new System.Drawing.Size(142, 25);
             this.label4.TabIndex = 3;
             this.label4.Text = "Nhân viên bán:";
             // 
@@ -101,15 +105,18 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(526, 100);
+            this.label5.Location = new System.Drawing.Point(394, 81);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 32);
+            this.label5.Size = new System.Drawing.Size(100, 25);
             this.label5.TabIndex = 4;
             this.label5.Text = "Ngày bán:";
             // 
             // data
             // 
             this.data.AllowCustomTheming = false;
+            this.data.AllowUserToAddRows = false;
+            this.data.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.data.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -164,13 +171,15 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.data.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.data.HeaderBgColor = System.Drawing.Color.Empty;
             this.data.HeaderForeColor = System.Drawing.Color.White;
-            this.data.Location = new System.Drawing.Point(31, 307);
+            this.data.Location = new System.Drawing.Point(23, 249);
+            this.data.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.data.Name = "data";
+            this.data.ReadOnly = true;
             this.data.RowHeadersVisible = false;
             this.data.RowHeadersWidth = 51;
             this.data.RowTemplate.Height = 40;
             this.data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.data.Size = new System.Drawing.Size(944, 405);
+            this.data.Size = new System.Drawing.Size(708, 329);
             this.data.TabIndex = 7;
             this.data.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
@@ -180,6 +189,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.Column1.HeaderText = "Tên mặt hàng";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
@@ -187,6 +197,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.Column2.HeaderText = "Đơn vị tính";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
@@ -194,6 +205,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.Column3.HeaderText = "Đơn giá";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
@@ -201,6 +213,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.Column4.HeaderText = "Số lượng";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
@@ -208,41 +221,46 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.Column5.HeaderText = "Tổng tiền";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // soHD
             // 
             this.soHD.AutoSize = true;
             this.soHD.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.soHD.Location = new System.Drawing.Point(274, 100);
+            this.soHD.Location = new System.Drawing.Point(206, 81);
+            this.soHD.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.soHD.Name = "soHD";
-            this.soHD.Size = new System.Drawing.Size(0, 32);
+            this.soHD.Size = new System.Drawing.Size(0, 25);
             this.soHD.TabIndex = 9;
             // 
             // tenKhachHang
             // 
             this.tenKhachHang.AutoSize = true;
             this.tenKhachHang.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tenKhachHang.Location = new System.Drawing.Point(274, 161);
+            this.tenKhachHang.Location = new System.Drawing.Point(206, 131);
+            this.tenKhachHang.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tenKhachHang.Name = "tenKhachHang";
-            this.tenKhachHang.Size = new System.Drawing.Size(0, 32);
+            this.tenKhachHang.Size = new System.Drawing.Size(0, 25);
             this.tenKhachHang.TabIndex = 10;
             // 
             // tenNV
             // 
             this.tenNV.AutoSize = true;
             this.tenNV.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tenNV.Location = new System.Drawing.Point(274, 228);
+            this.tenNV.Location = new System.Drawing.Point(206, 185);
+            this.tenNV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tenNV.Name = "tenNV";
-            this.tenNV.Size = new System.Drawing.Size(0, 32);
+            this.tenNV.Size = new System.Drawing.Size(0, 25);
             this.tenNV.TabIndex = 11;
             // 
             // ngayBan
             // 
             this.ngayBan.AutoSize = true;
             this.ngayBan.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ngayBan.Location = new System.Drawing.Point(673, 100);
+            this.ngayBan.Location = new System.Drawing.Point(505, 81);
+            this.ngayBan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ngayBan.Name = "ngayBan";
-            this.ngayBan.Size = new System.Drawing.Size(0, 32);
+            this.ngayBan.Size = new System.Drawing.Size(0, 25);
             this.ngayBan.TabIndex = 12;
             // 
             // bunifuPanel1
@@ -255,28 +273,31 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.bunifuPanel1.BorderThickness = 1;
             this.bunifuPanel1.Controls.Add(this.thanhTien);
             this.bunifuPanel1.Controls.Add(this.label6);
-            this.bunifuPanel1.Location = new System.Drawing.Point(31, 667);
+            this.bunifuPanel1.Location = new System.Drawing.Point(23, 542);
+            this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(944, 45);
+            this.bunifuPanel1.Size = new System.Drawing.Size(708, 37);
             this.bunifuPanel1.TabIndex = 8;
             // 
             // thanhTien
             // 
             this.thanhTien.AutoSize = true;
             this.thanhTien.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thanhTien.Location = new System.Drawing.Point(339, 7);
+            this.thanhTien.Location = new System.Drawing.Point(254, 6);
+            this.thanhTien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.thanhTien.Name = "thanhTien";
-            this.thanhTien.Size = new System.Drawing.Size(0, 32);
+            this.thanhTien.Size = new System.Drawing.Size(0, 25);
             this.thanhTien.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 7);
+            this.label6.Location = new System.Drawing.Point(2, 6);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(260, 32);
+            this.label6.Size = new System.Drawing.Size(202, 25);
             this.label6.TabIndex = 9;
             this.label6.Text = "Số tiền đã thanh toán:";
             // 
@@ -327,7 +348,8 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.btnThemHang.IdleIconLeftImage = null;
             this.btnThemHang.IdleIconRightImage = null;
             this.btnThemHang.IndicateFocus = false;
-            this.btnThemHang.Location = new System.Drawing.Point(717, 742);
+            this.btnThemHang.Location = new System.Drawing.Point(538, 603);
+            this.btnThemHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThemHang.Name = "btnThemHang";
             this.btnThemHang.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnThemHang.OnDisabledState.BorderRadius = 15;
@@ -361,7 +383,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.btnThemHang.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnThemHang.OnPressedState.IconLeftImage = null;
             this.btnThemHang.OnPressedState.IconRightImage = null;
-            this.btnThemHang.Size = new System.Drawing.Size(258, 58);
+            this.btnThemHang.Size = new System.Drawing.Size(194, 47);
             this.btnThemHang.TabIndex = 6;
             this.btnThemHang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnThemHang.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -372,9 +394,9 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             // 
             // ThongTinHoaDon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 812);
+            this.ClientSize = new System.Drawing.Size(752, 660);
             this.Controls.Add(this.ngayBan);
             this.Controls.Add(this.tenNV);
             this.Controls.Add(this.tenKhachHang);
@@ -387,6 +409,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ThongTinHoaDon";
             this.Text = "ThongTinHoaDon";
             this.Load += new System.EventHandler(this.ThongTinHoaDon_Load);

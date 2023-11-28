@@ -27,25 +27,11 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             table.Columns.Add("SoLuong", typeof(int));
             table.Columns.Add("TongTien", typeof(long));
 
-            var result = db.HangHoas.Select(p => new
-            {
-                p.MaHang,
-                p.LoaiHang,
-                p.TenHang,
-
-            });
-            matHang.DataSource = result.ToList();
+            LamMoiDanhSachHangHoa();
             matHang.DisplayMember = "TenHang";
             matHang.ValueMember = "MaHang";
-            db.SubmitChanges();
 
-            var khachHang = db.KhachHangs.Select(p => new
-            {
-                p.MaKH,
-                p.TenKH
-            });
-
-            comboboxTen.DataSource = khachHang;
+            LamMoiDanhSachKhachHang();
             comboboxTen.ValueMember = "MaKH";
             comboboxTen.DisplayMember = "TenKH";
         }
@@ -162,6 +148,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                     kh.ThanhPho = thanhPho.Text;
                     db.KhachHangs.InsertOnSubmit(kh);
                     db.SubmitChanges();
+                    LamMoiDanhSachKhachHang();
                 }
 
                 hoaDon.SoHD = RandomID("HD");
@@ -199,6 +186,10 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                 formHoaDon.dataTable = tb;
                 formHoaDon.tongTienThanhToan = thanhTien.Text;
                 formHoaDon.ShowDialog();
+
+                table.Rows.Clear();
+                btnSoLuong.Value = 0;
+                thanhTien.Text = "0";
             }
             catch (Exception err)
             {
@@ -209,6 +200,33 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         private void QLHoaDon_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void LamMoiDanhSachKhachHang()
+        {
+            var khachHang = db.KhachHangs.Select(p => new
+            {
+                p.MaKH,
+                p.TenKH
+            });
+
+            comboboxTen.DataSource = khachHang;
+        }
+
+        // làm mới dữ liệu hàng hoá
+        private void LamMoiDanhSachHangHoa()
+        {
+            var result = db.HangHoas.Select(p => new
+            {
+                p.MaHang,
+                p.LoaiHang,
+                p.TenHang,
+            });
+            matHang.DataSource = result.ToList();
+        }
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            LamMoiDanhSachHangHoa();
         }
     }
 }
