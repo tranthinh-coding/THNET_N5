@@ -30,12 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.usrName = new Bunifu.UI.WinForms.BunifuLabel();
             this.mainPanel = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
@@ -46,6 +47,7 @@
             this.hangHoaBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.qlkhBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.qlmk = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +61,7 @@
             this.usrName.Location = new System.Drawing.Point(192, 22);
             this.usrName.Name = "usrName";
             this.usrName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.usrName.Size = new System.Drawing.Size(104, 17);
+            this.usrName.Size = new System.Drawing.Size(84, 15);
             this.usrName.TabIndex = 1;
             this.usrName.Text = "Tên người dùng";
             this.usrName.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -74,11 +76,10 @@
             this.mainPanel.BorderRadius = 3;
             this.mainPanel.BorderThickness = 1;
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(333, 0);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.mainPanel.Location = new System.Drawing.Point(250, 0);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.ShowBorders = false;
-            this.mainPanel.Size = new System.Drawing.Size(1179, 555);
+            this.mainPanel.Size = new System.Drawing.Size(884, 451);
             this.mainPanel.TabIndex = 5;
             // 
             // bunifuPanel1
@@ -90,6 +91,7 @@
             this.bunifuPanel1.BorderRadius = 3;
             this.bunifuPanel1.BorderThickness = 1;
             this.bunifuPanel1.Controls.Add(this.thongTinNhom);
+            this.bunifuPanel1.Controls.Add(this.qlmk);
             this.bunifuPanel1.Controls.Add(this.thongKeBtn);
             this.bunifuPanel1.Controls.Add(this.hoaDonBtn);
             this.bunifuPanel1.Controls.Add(this.loaiHangBtn);
@@ -98,10 +100,9 @@
             this.bunifuPanel1.Controls.Add(this.bunifuButton1);
             this.bunifuPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = false;
-            this.bunifuPanel1.Size = new System.Drawing.Size(333, 555);
+            this.bunifuPanel1.Size = new System.Drawing.Size(250, 451);
             this.bunifuPanel1.TabIndex = 1;
             // 
             // thongTinNhom
@@ -151,8 +152,7 @@
             this.thongTinNhom.IdleIconLeftImage = null;
             this.thongTinNhom.IdleIconRightImage = null;
             this.thongTinNhom.IndicateFocus = false;
-            this.thongTinNhom.Location = new System.Drawing.Point(16, 376);
-            this.thongTinNhom.Margin = new System.Windows.Forms.Padding(4);
+            this.thongTinNhom.Location = new System.Drawing.Point(12, 67);
             this.thongTinNhom.Name = "thongTinNhom";
             this.thongTinNhom.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.thongTinNhom.OnDisabledState.BorderRadius = 16;
@@ -186,7 +186,7 @@
             this.thongTinNhom.OnPressedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.thongTinNhom.OnPressedState.IconLeftImage = null;
             this.thongTinNhom.OnPressedState.IconRightImage = null;
-            this.thongTinNhom.Size = new System.Drawing.Size(299, 42);
+            this.thongTinNhom.Size = new System.Drawing.Size(224, 34);
             this.thongTinNhom.TabIndex = 4;
             this.thongTinNhom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.thongTinNhom.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -214,11 +214,11 @@
             this.thongKeBtn.ColorContrastOnClick = 45;
             this.thongKeBtn.ColorContrastOnHover = 45;
             this.thongKeBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.thongKeBtn.CustomizableEdges = borderEdges2;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.thongKeBtn.CustomizableEdges = borderEdges3;
             this.thongKeBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.thongKeBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.thongKeBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -242,8 +242,7 @@
             this.thongKeBtn.IdleIconLeftImage = null;
             this.thongKeBtn.IdleIconRightImage = null;
             this.thongKeBtn.IndicateFocus = false;
-            this.thongKeBtn.Location = new System.Drawing.Point(16, 326);
-            this.thongKeBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.thongKeBtn.Location = new System.Drawing.Point(12, 267);
             this.thongKeBtn.Name = "thongKeBtn";
             this.thongKeBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.thongKeBtn.OnDisabledState.BorderRadius = 16;
@@ -277,7 +276,7 @@
             this.thongKeBtn.OnPressedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.thongKeBtn.OnPressedState.IconLeftImage = null;
             this.thongKeBtn.OnPressedState.IconRightImage = null;
-            this.thongKeBtn.Size = new System.Drawing.Size(299, 42);
+            this.thongKeBtn.Size = new System.Drawing.Size(224, 34);
             this.thongKeBtn.TabIndex = 3;
             this.thongKeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.thongKeBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -305,11 +304,11 @@
             this.hoaDonBtn.ColorContrastOnClick = 45;
             this.hoaDonBtn.ColorContrastOnHover = 45;
             this.hoaDonBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.hoaDonBtn.CustomizableEdges = borderEdges3;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.hoaDonBtn.CustomizableEdges = borderEdges4;
             this.hoaDonBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.hoaDonBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.hoaDonBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -333,8 +332,7 @@
             this.hoaDonBtn.IdleIconLeftImage = null;
             this.hoaDonBtn.IdleIconRightImage = null;
             this.hoaDonBtn.IndicateFocus = false;
-            this.hoaDonBtn.Location = new System.Drawing.Point(16, 267);
-            this.hoaDonBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.hoaDonBtn.Location = new System.Drawing.Point(12, 227);
             this.hoaDonBtn.Name = "hoaDonBtn";
             this.hoaDonBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.hoaDonBtn.OnDisabledState.BorderRadius = 16;
@@ -368,7 +366,7 @@
             this.hoaDonBtn.OnPressedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.hoaDonBtn.OnPressedState.IconLeftImage = null;
             this.hoaDonBtn.OnPressedState.IconRightImage = null;
-            this.hoaDonBtn.Size = new System.Drawing.Size(299, 42);
+            this.hoaDonBtn.Size = new System.Drawing.Size(224, 34);
             this.hoaDonBtn.TabIndex = 3;
             this.hoaDonBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.hoaDonBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -396,11 +394,11 @@
             this.loaiHangBtn.ColorContrastOnClick = 45;
             this.loaiHangBtn.ColorContrastOnHover = 45;
             this.loaiHangBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.loaiHangBtn.CustomizableEdges = borderEdges4;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.loaiHangBtn.CustomizableEdges = borderEdges5;
             this.loaiHangBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.loaiHangBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.loaiHangBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -424,8 +422,7 @@
             this.loaiHangBtn.IdleIconLeftImage = null;
             this.loaiHangBtn.IdleIconRightImage = null;
             this.loaiHangBtn.IndicateFocus = false;
-            this.loaiHangBtn.Location = new System.Drawing.Point(16, 206);
-            this.loaiHangBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.loaiHangBtn.Location = new System.Drawing.Point(12, 187);
             this.loaiHangBtn.Name = "loaiHangBtn";
             this.loaiHangBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.loaiHangBtn.OnDisabledState.BorderRadius = 16;
@@ -459,7 +456,7 @@
             this.loaiHangBtn.OnPressedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.loaiHangBtn.OnPressedState.IconLeftImage = null;
             this.loaiHangBtn.OnPressedState.IconRightImage = null;
-            this.loaiHangBtn.Size = new System.Drawing.Size(299, 42);
+            this.loaiHangBtn.Size = new System.Drawing.Size(224, 34);
             this.loaiHangBtn.TabIndex = 3;
             this.loaiHangBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.loaiHangBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -487,11 +484,11 @@
             this.hangHoaBtn.ColorContrastOnClick = 45;
             this.hangHoaBtn.ColorContrastOnHover = 45;
             this.hangHoaBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.hangHoaBtn.CustomizableEdges = borderEdges5;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.hangHoaBtn.CustomizableEdges = borderEdges6;
             this.hangHoaBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.hangHoaBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.hangHoaBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -515,8 +512,7 @@
             this.hangHoaBtn.IdleIconLeftImage = null;
             this.hangHoaBtn.IdleIconRightImage = null;
             this.hangHoaBtn.IndicateFocus = false;
-            this.hangHoaBtn.Location = new System.Drawing.Point(16, 144);
-            this.hangHoaBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.hangHoaBtn.Location = new System.Drawing.Point(12, 147);
             this.hangHoaBtn.Name = "hangHoaBtn";
             this.hangHoaBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.hangHoaBtn.OnDisabledState.BorderRadius = 16;
@@ -550,7 +546,7 @@
             this.hangHoaBtn.OnPressedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.hangHoaBtn.OnPressedState.IconLeftImage = null;
             this.hangHoaBtn.OnPressedState.IconRightImage = null;
-            this.hangHoaBtn.Size = new System.Drawing.Size(299, 42);
+            this.hangHoaBtn.Size = new System.Drawing.Size(224, 34);
             this.hangHoaBtn.TabIndex = 3;
             this.hangHoaBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.hangHoaBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -578,11 +574,11 @@
             this.qlkhBtn.ColorContrastOnClick = 45;
             this.qlkhBtn.ColorContrastOnHover = 45;
             this.qlkhBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.qlkhBtn.CustomizableEdges = borderEdges6;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.qlkhBtn.CustomizableEdges = borderEdges7;
             this.qlkhBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.qlkhBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.qlkhBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -606,8 +602,7 @@
             this.qlkhBtn.IdleIconLeftImage = null;
             this.qlkhBtn.IdleIconRightImage = null;
             this.qlkhBtn.IndicateFocus = false;
-            this.qlkhBtn.Location = new System.Drawing.Point(16, 82);
-            this.qlkhBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.qlkhBtn.Location = new System.Drawing.Point(12, 107);
             this.qlkhBtn.Name = "qlkhBtn";
             this.qlkhBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.qlkhBtn.OnDisabledState.BorderRadius = 16;
@@ -641,7 +636,7 @@
             this.qlkhBtn.OnPressedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.qlkhBtn.OnPressedState.IconLeftImage = null;
             this.qlkhBtn.OnPressedState.IconRightImage = null;
-            this.qlkhBtn.Size = new System.Drawing.Size(299, 42);
+            this.qlkhBtn.Size = new System.Drawing.Size(224, 34);
             this.qlkhBtn.TabIndex = 3;
             this.qlkhBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.qlkhBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -670,11 +665,11 @@
             this.bunifuButton1.ColorContrastOnClick = 45;
             this.bunifuButton1.ColorContrastOnHover = 45;
             this.bunifuButton1.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges7.BottomLeft = true;
-            borderEdges7.BottomRight = true;
-            borderEdges7.TopLeft = true;
-            borderEdges7.TopRight = true;
-            this.bunifuButton1.CustomizableEdges = borderEdges7;
+            borderEdges8.BottomLeft = true;
+            borderEdges8.BottomRight = true;
+            borderEdges8.TopLeft = true;
+            borderEdges8.TopRight = true;
+            this.bunifuButton1.CustomizableEdges = borderEdges8;
             this.bunifuButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -698,8 +693,7 @@
             this.bunifuButton1.IdleIconLeftImage = null;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = false;
-            this.bunifuButton1.Location = new System.Drawing.Point(27, 492);
-            this.bunifuButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuButton1.Location = new System.Drawing.Point(20, 400);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.OnDisabledState.BorderRadius = 14;
@@ -733,7 +727,7 @@
             this.bunifuButton1.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.OnPressedState.IconLeftImage = null;
             this.bunifuButton1.OnPressedState.IconRightImage = null;
-            this.bunifuButton1.Size = new System.Drawing.Size(287, 48);
+            this.bunifuButton1.Size = new System.Drawing.Size(215, 39);
             this.bunifuButton1.TabIndex = 0;
             this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -742,18 +736,107 @@
             this.bunifuButton1.UseDefaultRadiusAndThickness = true;
             this.bunifuButton1.Click += new System.EventHandler(this.bunifuButton1_Click);
             // 
+            // qlmk
+            // 
+            this.qlmk.AllowAnimations = true;
+            this.qlmk.AllowMouseEffects = true;
+            this.qlmk.AllowToggling = false;
+            this.qlmk.AnimationSpeed = 200;
+            this.qlmk.AutoGenerateColors = false;
+            this.qlmk.AutoRoundBorders = false;
+            this.qlmk.AutoSizeLeftIcon = true;
+            this.qlmk.AutoSizeRightIcon = true;
+            this.qlmk.BackColor = System.Drawing.Color.Transparent;
+            this.qlmk.BackColor1 = System.Drawing.Color.Transparent;
+            this.qlmk.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("qlmk.BackgroundImage")));
+            this.qlmk.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.qlmk.ButtonText = "Quản lý mật khẩu";
+            this.qlmk.ButtonTextMarginLeft = 0;
+            this.qlmk.ColorContrastOnClick = 45;
+            this.qlmk.ColorContrastOnHover = 45;
+            this.qlmk.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.qlmk.CustomizableEdges = borderEdges2;
+            this.qlmk.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.qlmk.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.qlmk.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.qlmk.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.qlmk.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.qlmk.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.qlmk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.qlmk.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.qlmk.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.qlmk.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.qlmk.IconMarginLeft = 11;
+            this.qlmk.IconPadding = 10;
+            this.qlmk.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.qlmk.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.qlmk.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.qlmk.IconSize = 25;
+            this.qlmk.IdleBorderColor = System.Drawing.Color.Transparent;
+            this.qlmk.IdleBorderRadius = 16;
+            this.qlmk.IdleBorderThickness = 1;
+            this.qlmk.IdleFillColor = System.Drawing.Color.Transparent;
+            this.qlmk.IdleIconLeftImage = null;
+            this.qlmk.IdleIconRightImage = null;
+            this.qlmk.IndicateFocus = false;
+            this.qlmk.Location = new System.Drawing.Point(12, 307);
+            this.qlmk.Name = "qlmk";
+            this.qlmk.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.qlmk.OnDisabledState.BorderRadius = 16;
+            this.qlmk.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.qlmk.OnDisabledState.BorderThickness = 0;
+            this.qlmk.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.qlmk.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.qlmk.OnDisabledState.IconLeftImage = null;
+            this.qlmk.OnDisabledState.IconRightImage = null;
+            this.qlmk.onHoverState.BorderColor = System.Drawing.Color.Transparent;
+            this.qlmk.onHoverState.BorderRadius = 16;
+            this.qlmk.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.qlmk.onHoverState.BorderThickness = 0;
+            this.qlmk.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.qlmk.onHoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.qlmk.onHoverState.IconLeftImage = null;
+            this.qlmk.onHoverState.IconRightImage = null;
+            this.qlmk.OnIdleState.BorderColor = System.Drawing.Color.Transparent;
+            this.qlmk.OnIdleState.BorderRadius = 16;
+            this.qlmk.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.qlmk.OnIdleState.BorderThickness = 0;
+            this.qlmk.OnIdleState.FillColor = System.Drawing.Color.Transparent;
+            this.qlmk.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.qlmk.OnIdleState.IconLeftImage = null;
+            this.qlmk.OnIdleState.IconRightImage = null;
+            this.qlmk.OnPressedState.BorderColor = System.Drawing.Color.Transparent;
+            this.qlmk.OnPressedState.BorderRadius = 16;
+            this.qlmk.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.qlmk.OnPressedState.BorderThickness = 0;
+            this.qlmk.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.qlmk.OnPressedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.qlmk.OnPressedState.IconLeftImage = null;
+            this.qlmk.OnPressedState.IconRightImage = null;
+            this.qlmk.Size = new System.Drawing.Size(224, 34);
+            this.qlmk.TabIndex = 3;
+            this.qlmk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.qlmk.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.qlmk.TextMarginLeft = 0;
+            this.qlmk.TextPadding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.qlmk.UseDefaultRadiusAndThickness = true;
+            this.qlmk.Click += new System.EventHandler(this.qlmk_Click);
+            // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1512, 555);
+            this.ClientSize = new System.Drawing.Size(1134, 451);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.bunifuPanel1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimizeBox = false;
             this.Name = "Dashboard";
             this.Text = "Dashboard";
@@ -776,5 +859,6 @@
         private Bunifu.UI.WinForms.BunifuPanel mainPanel;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton thongKeBtn;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton thongTinNhom;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton qlmk;
     }
 }

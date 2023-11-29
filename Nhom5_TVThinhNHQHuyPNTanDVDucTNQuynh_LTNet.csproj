@@ -333,6 +333,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLBanHangTapHoaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLDoiMatKhau.Designer.cs">
+      <DependentUpon>QLDoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="QLHangHoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -411,6 +417,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLDoiMatKhau.resx">
+      <DependentUpon>QLDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLHangHoa.resx">
       <DependentUpon>QLHangHoa.cs</DependentUpon>

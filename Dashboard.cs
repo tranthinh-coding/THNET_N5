@@ -20,6 +20,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
         QLLoaiHang formLoaiHang = null;
         QLHoaDon formHoaDon = null;
         ThongKe formThongKe = null;
+        QLDoiMatKhau formMatKhau = null;
         ThongTinNhom formThongTinNhom = null;
 
         Form currentFormOpen = null;
@@ -51,6 +52,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             hoaDonBtn.IdleFillColor = buttonNormalColor;
             loaiHangBtn.IdleFillColor = buttonNormalColor;
             thongKeBtn.IdleFillColor = buttonNormalColor;
+            qlmk.IdleFillColor = buttonNormalColor;
         }
         private void qlhd_Click(object sender, EventArgs e)
         {
@@ -138,6 +140,20 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             qlkhBtn.IdleFillColor = buttonActiveColor;
 
             setForm(formThongTinNhom);
+        }
+
+        private void qlmk_Click(object sender, EventArgs e)
+        {
+            if (formMatKhau == null)
+                formMatKhau = new QLDoiMatKhau();
+
+            if (currentFormOpen == formMatKhau) return;
+
+            resetButtonColor();
+            currentFormOpen?.Hide();
+            qlmk.IdleFillColor = buttonActiveColor;
+
+            setForm(formMatKhau);
         }
     }
 }
