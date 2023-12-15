@@ -190,6 +190,7 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                 table.Rows.Clear();
                 btnSoLuong.Value = 0;
                 thanhTien.Text = "0";
+                tongTienNumber = 0;
             }
             catch (Exception err)
             {

@@ -31,13 +31,13 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             soHD.Text = maHoaDon;
             ngayBan.Text = ngay.ToString();
             tenKhachHang.Text = tenKhach;
-            tenNV.Text = "Đỗ Văn Đức";
+            tenNV.Text = Store.User.TenNV;
             
         }
 
         private void btnThemHang_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Đang in hoá đơn...");
+            MessageBox.Show("Đang kết nối máy in...");
             this.Close();
         }
     }

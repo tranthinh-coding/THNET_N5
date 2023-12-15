@@ -71,6 +71,25 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
                          };
 
             dtGridViewHangHoa.DataSource = render;
+
+            var query = from x in db.LoaiHangs
+                        select new
+                        {
+                            MaLoai = x.MaLoai,
+                            TenLoai = x.TenLoai
+                        };
+
+            listLoaiHang = query.AsEnumerable()
+                                   .Select(x => new LoaiHang
+                                   {
+                                       MaLoai = x.MaLoai,
+                                       TenLoai = x.TenLoai
+                                   })
+                                   .ToList();
+
+            cbBLoaiHang.ValueMember = "MaLoai";
+            cbBLoaiHang.DisplayMember = "TenLoai";
+            cbBLoaiHang.DataSource = listLoaiHang;
         }
 
         private void btnRender_Click(object sender, EventArgs e)
@@ -210,7 +229,6 @@ namespace Nhom5_TVThinhNHQHuyPNTanDVDucTNQuynh_LTNet
             txtTenHang.Clear();
             txtDVT.Clear();
             txtDonGia.Clear();
-            txtTenHang.Focus();
         }
 
         private void exportExcelToolStripMenuItem_Click(object sender, EventArgs e)
